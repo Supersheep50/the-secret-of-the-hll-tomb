@@ -27,8 +27,11 @@ def introGame():
     while response not in yes_no: 
         response = input("Jon: Have you visted here before?\n")
         if response == "yes":
-            print("Jon: Ah excellent! I knew I reocgnized your mug.")
-
+            print("Jon: Ah excellent! I knew I recognized your ugly mug. No need for instrcutions then!")
+        elif response == "no":
+            print("Jon: Ah a newbie! Well you're here to find 3 golden keys to open a very special door")
+        else:
+            print("Jon: Sorry, I didn't understand that")
 
 
 
