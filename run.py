@@ -15,26 +15,55 @@ def introGame():
     print("However, open fields & trees stretch far into the distance")
     print("To your right is a small building made of timber and straw.") 
     print("Smoke is billowing from the chimney & the lights are on")
-    print("Suddenly a strange but very handsome man in dark robes appears.")
+    print("Suddenly a strange but very handsome man in dark robes appears.\n")
     print("Jon: Welcome traveller!")
     print("Jon: You look weary? Long Uber?")
     print("Jon: My name is Jon and I will be your guide through this Tomb!")
-    print("Jon: Now, what is your name?")
+    print("Jon: Now, what is your name?\n")
     name = input()
-    print("Jon: Nice to meet you "+name+". Have you visited us before?")
+    print("Jon: Nice to meet you "+name+".")
+
+    response = ""
+    while response not in yes_no: 
+        response = input("Jon: Have you visted here before?\n")
+        if response == "yes":
+            print("Jon: Ah excellent! I knew I reocgnized your mug.")
 
 
 
 
-#def main(): 
+
+
+
+
+def liamRight():
+    """
+    The room to the right with the stranger named Liam
+    """
+
+def owenLeft():
+    """
+    The room to the left with the stranger named Owen
+    """
+
+def kevinForward():
+    """
+    The room straight ahead with the stranger named Kevin
+    """
+
+
+
+
+def main(): 
     """
     Run all program functions
     """
-
+    introGame()
 
 
 print("Welcome to The Secret of the HLL Tomb!")
 print("The Secret of the HLL Tomb is a text adventure videogame.")
 print("Your goal is to collect 3 keys to open the door at the end of the Tomb.")
 print("You will meet 3 strangers along the way, each posing a riddle for you to answer")
-print("Good luck!")
+print("Good luck!\n")
+main()
