@@ -1,6 +1,6 @@
 #Controls 
 yes_no = ["yes","no"]
-directions = ["left","right","forward","backward"]
+directions = ["left","right","forward","backwards"]
 answers = [1,2,3]
 
 #Gamestart & Intro 
@@ -27,16 +27,38 @@ def introGame():
     while response not in yes_no: 
         response = input("Jon: Have you visted here before?\n")
         if response == "yes":
-            print("Jon: Ah excellent! I knew I recognized your ugly mug. No need for instrcutions then!")
+            print("Jon: Ah excellent! I knew I recognized your ugly mug.\n No need for instructions then! Off you pop now.")
         elif response == "no":
-            print("Jon: Ah a newbie! Well you're here to find 3 golden keys to open a very special door")
+            print("Jon: Ah a newbie! Well, let me impart some wisdom")
+            print("Jon: You are here to collect the 3 HLL keys.")
+            print("Jon: There is no other way out of the Tomb.\n Except that fire exit door over there.")
+            print("Jon: You will meet 3 strangers.\n Each will pose you a riddle.")
+            print("Jon: Answering a riddle correctly will earn you a key and make you feel all smug and fuzzy.")
+            print("Jon: Once you've collected all 3 keys, you will be able to venture to....")
+            print("Jon: THE TEMPLE OF THE PODS!!!")
+            print("Some smoke went off behind him and dramatic music played from an old cd player behind a tree.")
+            print("Jon: Ahem, anyway. On you pop now.")
         else:
-            print("Jon: Sorry, I didn't understand that")
+            print("Jon: Sorry, I didn't understand that.")
+
+    print("The shadowy (and very handsome) stranger disappears.")
+    print("There is a crossroads at the inn.")
+    print("Each road leading to a different tomb.")
+
+    while response not in directions: 
+        response = input("Which way will you go?\n left, right, forward, backwards")
 
 
 
 
 
+
+
+
+def owenLeft():
+    """
+    The room to the left with the stranger named Owen
+    """
 
 
 def liamRight():
@@ -44,10 +66,6 @@ def liamRight():
     The room to the right with the stranger named Liam
     """
 
-def owenLeft():
-    """
-    The room to the left with the stranger named Owen
-    """
 
 def kevinForward():
     """
