@@ -1,14 +1,25 @@
 """
 Credit to replit
 """
+
+
 import sys,time
-def delprint(text="Type a string in",delay_time=.05): 
+def delprint(text="Type a string in",delay_time=.00): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
     time.sleep(delay_time)
 
+
 import emoji
+
+W  = '\033[0m'  # white (normal)
+R  = '\033[31m' # red
+G  = '\033[32m' # green
+O  = '\033[33m' # orange
+B  = '\033[34m' # blue
+P  = '\033[35m' # purple
+
 
 #Controls 
 yes_no = ["yes","no"]
@@ -84,7 +95,8 @@ def owenLeft():
     delprint("It is a long dirt path with bare trees on either side.\n")
     delprint("Up ahead, you see a small house made entirely of maple syrup.\n")
     delprint("It appears to be melting and reforming all at once.\n")
-    delprint("A figure suddenly appears from the door, it is Owen.\n")
+    delprint("A figure suddenly appears from the door, it is.....\n")
+    delprint(R+"O W E N ! ! ! \n")
     delprint("Owen: Well hello there eh. You lost eh?\n")
 
 def liamRight():
