@@ -19,8 +19,7 @@ P  = '\033[35m' # purple
 
 yes_no = ["yes","no"]
 directions = ["left","right","forward"]
-answers = [1,2,3]
-
+answers = ["1","2","3"]
 
 def introGame():
     """
@@ -95,22 +94,35 @@ def owenLeft():
     
     response = ""
     while response not in yes_no: 
-        response = input("Owen: Wait, I know you. Are you "+name+"?\n")
+        response = input("Owen: Wait, I know you. Are you ""?\n")
         if response == "yes":
             delprint("Owen: I have heard much about you. I am Owen eh.\n")
             delprint("He sits down on a chair outside of the melting house.\n")
-            delprint("It appears to be entirely made of Tim Hortons cups.")
+            delprint("It appears to be entirely made of Tim Hortons cups.\n")
             delprint("A key in the shape of an H hangs around his neck.\n")
             delprint("Owen: Time for your riddle. I hope you are ready eh.\n")
         elif response == "no":
-            delprint("Owen: Oh? I thought you were "+name+"eh.\n")
+            delprint("Owen: Oh? I thought you were ""eh.\n")
             delprint("Owen: Then I can not help you eh.\n")
             delprint("Owen: Please leave via that escalator over there. \n")
         else:
             delprint("Owen: Eh?\n")
     
-    
-    
+    response = ""
+    while response not in answers: 
+        print("Owen: What work can one never finish?\n")
+        response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n")
+        if response == "2":
+            delprint("Owen: Very good traveller. You're wiser than you look.\n")
+            delprint("Owen: Here take this key. You are one step closer eh.\n")
+        elif response == "1":
+            delprint("Owen: Not quite. Try again.\n")
+        elif response == "3":
+            delprint("Owen: Not quite. Try again.\n")
+        else:
+            delprint("Owen: Not quite. Try again.\n")
+
+     
 
 def liamRight():
     """
