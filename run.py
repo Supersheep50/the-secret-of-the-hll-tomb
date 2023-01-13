@@ -1,3 +1,5 @@
+import emoji
+
 #Controls 
 yes_no = ["yes","no"]
 directions = ["left","right","forward"]
@@ -41,7 +43,7 @@ def introGame():
             print("Jon: Once you've collected all 3 keys")
             print("Jon: you will be able to venture to....")
             print("Jon: THE TEMPLE OF THE PODS!!!\n")
-            print("Some smoke went off behind him & dramatic music played.\n")
+            print("Some smoke went off behind him & dramatic music played \U0001F3B6 \n")
             print("Jon: Ahem, anyway. Off you pop now.\n")
         else:
             print("Jon: Sorry, I didn't understand that.")
