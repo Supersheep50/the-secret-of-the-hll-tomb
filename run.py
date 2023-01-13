@@ -1,8 +1,4 @@
-"""
-Credit to replit
-"""
-
-
+import emoji
 import sys,time
 def delprint(text="Type a string in",delay_time=.00): 
   for character in text:      
@@ -10,9 +6,9 @@ def delprint(text="Type a string in",delay_time=.00):
     sys.stdout.flush()
     time.sleep(delay_time)
 
-
-import emoji
-
+"""
+Color definitions - credit to StackoverFlow.
+"""
 W  = '\033[0m'  # white (normal)
 R  = '\033[31m' # red
 G  = '\033[32m' # green
@@ -21,12 +17,10 @@ B  = '\033[34m' # blue
 P  = '\033[35m' # purple
 
 
-#Controls 
 yes_no = ["yes","no"]
 directions = ["left","right","forward"]
 answers = [1,2,3]
 
-#Gamestart & Intro 
 
 def introGame():
     """
@@ -64,7 +58,7 @@ def introGame():
             delprint("Jon: Once you've collected all 3 keys.\n")
             delprint("Jon: you will be able to venture to....\n")
             delprint("Jon: THE TEMPLE OF THE PODS!!!\n")
-            delprint("Some smoke went off behind him & dramatic music played \U0001F3B6 \n")
+            delprint("Smoke billowed & dramatic music played \U0001F3B6 \n")
             delprint("Jon: Ahem, anyway. Off you pop now.\n")
         else:
             delprint("Jon: Sorry, I didn't understand that.\n")
@@ -98,6 +92,25 @@ def owenLeft():
     delprint("A figure suddenly appears from the door, it is.....\n")
     delprint(R+"O W E N ! ! ! \n")
     delprint("Owen: Well hello there eh. You lost eh?\n")
+    
+    response = ""
+    while response not in yes_no: 
+        response = input("Owen: Wait, I know you. Are you "+name+"?\n")
+        if response == "yes":
+            delprint("Owen: I have heard much about you. I am Owen eh.\n")
+            delprint("He sits down on a chair outside of the melting house.\n")
+            delprint("It appears to be entirely made of Tim Hortons cups.")
+            delprint("A key in the shape of an H hangs around his neck.\n")
+            delprint("Owen: Time for your riddle. I hope you are ready eh.\n")
+        elif response == "no":
+            delprint("Owen: Oh? I thought you were "+name+"eh.\n")
+            delprint("Owen: Then I can not help you eh.\n")
+            delprint("Owen: Please leave via that escalator over there. \n")
+        else:
+            delprint("Owen: Eh?\n")
+    
+    
+    
 
 def liamRight():
     """
