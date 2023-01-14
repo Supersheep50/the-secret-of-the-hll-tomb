@@ -1,3 +1,4 @@
+import webbrowser
 import emoji
 import sys,time
 def delprint(text="Type a string in",delay_time=.00): 
@@ -32,7 +33,7 @@ def introGame():
     delprint("To your right is a small building made of timber and straw.\n") 
     delprint("Smoke is billowing from the chimney & the lights are on.\n")
     delprint("Suddenly a strange but very handsome man in dark robes appears.\n")
-    delprint("Jon: Welcome traveller!\n")
+    delprint("Jon: Welcome Traveller!\n")
     delprint("Jon: You look weary? Long Uber?\n")
     delprint("Jon: My name is Jon and I will be your guide through this Tomb!\n")
     delprint("Jon: Now, what is your name?\n")
@@ -114,8 +115,9 @@ def owenLeft():
         print("Owen: What work can one never finish?\n")
         response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n")
         if response == "2":
-            delprint("Owen: Very good traveller. You're wiser than you look.\n")
+            delprint("Owen: Very good Traveller. You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
+            delprint("You hold a key in your hands \U0001F5DD. \n")
         elif response == "1":
             delprint("Owen: Not quite. Try again.\n")
         elif response == "3":
@@ -139,24 +141,24 @@ def liamRight():
     delprint("Suddenly, he spins around to look at you, it is....\n")
     delprint(G+"L I A M !!!\n")
     delprint("He has a long ragged beard with a scar across his face.\n")
-    delprint("Liam: Ha a traveller! Neeep!\n")
+    delprint("Liam: Ha! A Traveller! Neeep!\n")
     delprint("His voice is so high and shrill it hurts your ears.\n")
-    delprint("Liam: You scared me. You must be the traveller I heard about.\n")
+    delprint("Liam: You scared me. You must be the Traveller I heard about.\n")
     
     
     response = ""
     while response not in yes_no: 
-        response = input("Liam: Do you love Lilt like I? Neeep!")
+        response = input("Liam: Do you love Lilt like I? Neeep!\n")
         if response == "yes":
             delprint("Liam: Excellent. I am Liam the Vagabond. Neeep!\n")
             delprint("He does a small jig that takes several minutes.\n")
             delprint("Liam: Lilt gives me the energy to dance like this.\n")
             delprint("He dances for at least another 15 minutes.\n")
             delprint("Liam: I grow weary. Neep. Hmmm... \n")
-            delprint('He starts to eye you suspiciously.')
+            delprint('He starts to eye you suspiciously.\n')
         elif response == "no":
-            delprint("Suddenyl, Jon reappears behind.\n")
-            delprint("He begins to whisper i your ear.\n")
+            delprint("Suddenly, Jon reappears behind you.\n")
+            delprint("He begins to whisper in your ear.\n")
             delprint("Jon: Look pal, just say you love the Lilt okay?\n")
             delprint("Jon: Otherwise he'll never let you leave.\n")
             delprint("As quick as he appeared, Jon is gone.\n")
@@ -173,7 +175,7 @@ def liamRight():
         if response == "3":
             delprint("Liam: Hmmm FINE. I believe you. Take this.\n")
             delprint("He hands you an empty can of the beverage known as Lilt.\n")
-            delprint("You look at me patiently.\n")
+            delprint("You look at him impatiently.\n")
             delprint("Liam: Oh fine. Take this too.\n")
             delprint("It is a key in the shape of an L  \U0001F5DD.\n")
         elif response == "1":
@@ -187,12 +189,60 @@ def kevinForward():
     """
     The room straight ahead with the stranger named Kevin
     """
+    directions = ["forward"]
+    delprint("You decide to take the path forwards.\n")
+    delprint("It is a long golden path made out of bricks.\n")
+    delprint("You feel eyes watching you from the trees.\n")
+    delprint("Suddenly, without warning you fall through a trapdoor.\n")
+    delprint("It feels like you are falling through space & time itself.\n")
+    delprint("You hear a disembodied voice surrounding you. It says...\n")
+    delprint("'Open world games are rubbish and don't respect your time.'\n")
+    delprint("You block your ears and shake your head. It isn't true.\n")
+    delprint("It can't be true you say.\n")
+    delprint("You hit the floor with a thump.\n")
+    delprint("You are in a completely gold room.\n")
+    delprint("In front of you, a man sits on a golden throne.\n")
+   
+    response = ""
+    while response not in yes_no: 
+        response = input("Mystery man: WELCOME!! Are you Henry the plumber?\n")
+        if response == "no":
+            delprint("Mystery man: Oh. Well, I am....\n")
+            delprint(O+"K E V I N!!!!\n")
+            delprint("Some of the gold wallpaper starts to peel from the walls.\n")
+            delprint("He continues to stand with his arms aloft for some time.\n")
+            delprint("Kevin: Hmm if you're not the plumber....\n")
+            delprint("Kevin: You must be this Traveller I hear about.\n")
+            
+        elif response == "yes":
+            delprint("Kevin: Oh thank god. I've been waiting for days! \n")
+            delprint("Kevin: The guest bedroom toilet is terribly clogged.\n")
+            delprint("Kevin: That strange girl Steph stayed here last night... \n")
+            delprint("Kevin: ...everytime she stays this happens.\n")
+            delprint("Kevin: Wait...you don't look lika a plumber.\n")
+        else:
+            delprint("Kevin: What? That makes no sense.\n")
+    
+    response = ""
+    while response not in answers: 
+        print("Owen: What work can one never finish?\n")
+        response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n")
+        if response == "2":
+            delprint("Owen: Very good Traveller. You're wiser than you look.\n")
+            delprint("Owen: Here take this key. You are one step closer eh.\n")
+            delprint("You hold a key in your hands \U0001F5DD. \n")
+        elif response == "1":
+            delprint("Owen: Not quite. Try again.\n")
+        elif response == "3":
+            delprint("Owen: Not quite. Try again.\n")
+        else:
+            delprint("Owen: Not quite. Try again.\n")
 
 def jonInn():
     """
     Going backwards brings you back to the inn"
     """
-    delprint("Jon: What are you doing back here? Onwards traveller!")
+    delprint("Jon: What are you doing back here? Onwards Traveller!")
     
 
 
