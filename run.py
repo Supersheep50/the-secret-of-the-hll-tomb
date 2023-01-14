@@ -49,7 +49,7 @@ def introGame():
             delprint("Jon: Ah a newbie! Well, let me impart some wisdom.\n")
             delprint("Jon: You are here to collect the 3 HLL keys.\n")
             delprint("Jon: There is no other way out of the Tomb.\n")
-            delprint("Jon: Except that fire exit door over there.\n")
+            delprint("Jon: Except for that fire exit door over there.\n")
             delprint("Jon: You will meet 3 strangers.\n")
             delprint("Jon: Each will pose you a riddle.\n")
             delprint("Jon: Answering a riddle correctly will earn you a key.\n")
@@ -105,6 +105,7 @@ def owenLeft():
             delprint("Owen: Oh? I thought you were ""eh.\n")
             delprint("Owen: Then I can not help you eh.\n")
             delprint("Owen: Please leave via that escalator over there. \n")
+            delprint("He laughs a huge laugh and asks the question anyway.\n")
         else:
             delprint("Owen: Eh?\n")
     
@@ -128,7 +129,59 @@ def liamRight():
     """
     The room to the right with the stranger named Liam
     """
+    directions = ["right"]
+    delprint("You decide to take the path to the right.\n")
+    delprint("It is a long stone path with Lilt trees on either side.\n")
+    delprint("In the distance, you see a small cart blocking the path.\n")
+    delprint("The cart appears to be missing a wheel. A man stands nearby.\n")
+    delprint("He is cursing the cart and kicking the fallen wheel.\n")
+    delprint("He mumbles something about a man named Pa.\n")
+    delprint("Suddenly, he spins around to look at you, it is....\n")
+    delprint(G+"L I A M !!!\n")
+    delprint("He has a long ragged beard with a scar across his face.\n")
+    delprint("Liam: Ha a traveller! Neeep!\n")
+    delprint("His voice is so high and shrill it hurts your ears.\n")
+    delprint("Liam: You scared me. You must be the traveller I heard about.\n")
+    
+    
+    response = ""
+    while response not in yes_no: 
+        response = input("Liam: Do you love Lilt like I? Neeep!")
+        if response == "yes":
+            delprint("Liam: Excellent. I am Liam the Vagabond. Neeep!\n")
+            delprint("He does a small jig that takes several minutes.\n")
+            delprint("Liam: Lilt gives me the energy to dance like this.\n")
+            delprint("He dances for at least another 15 minutes.\n")
+            delprint("Liam: I grow weary. Neep. Hmmm... \n")
+            delprint('He starts to eye you suspiciously.')
+        elif response == "no":
+            delprint("Suddenyl, Jon reappears behind.\n")
+            delprint("He begins to whisper i your ear.\n")
+            delprint("Jon: Look pal, just say you love the Lilt okay?\n")
+            delprint("Jon: Otherwise he'll never let you leave.\n")
+            delprint("As quick as he appeared, Jon is gone.\n")
+            delprint("Liam stares at you.\n")
+        else:
+            delprint("Liam: WHAT? I can't hear you, speak up.\n")
+    
 
+    response = ""
+    while response not in answers: 
+        delprint("Liam: I DO NOT BELIEVE YOU!! NEEEEEP!\n")
+        delprint("Liam: Do you luv Lilt?? \n")
+        response = input("1 )I LOVE LILT | 2) LILT IS THE BEST |3) I LUV LILT \n")
+        if response == "3":
+            delprint("Liam: Hmmm FINE. I believe you. Take this.\n")
+            delprint("He hands you an empty can of the beverage known as Lilt.\n")
+            delprint("You look at me patiently.\n")
+            delprint("Liam: Oh fine. Take this too.\n")
+            delprint("It is a key in the shape of an L  \U0001F5DD.\n")
+        elif response == "1":
+            delprint("Liam: WRONG. Neep. Try again.\n")
+        elif response == "3":
+            delprint("Liam: WRONG. Neep. Try again.\n")
+        else:
+            delprint("Liam: WRONG. Neep. Try again.\n")
 
 def kevinForward():
     """
