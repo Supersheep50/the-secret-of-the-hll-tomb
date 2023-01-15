@@ -1,7 +1,7 @@
 import webbrowser
 import emoji
 import sys,time
-def delprint(text="Type a string in",delay_time=.05): 
+def delprint(text="Type a string in",delay_time=.00): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
@@ -118,12 +118,18 @@ def owenLeft():
             delprint("Owen: Very good Traveller. You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
             delprint("You hold a key in your hands \U0001F5DD. \n")
+            delprint("You suddebly start to feel warm and fuzzy.\n")
+            delprint("You look at your hands as they disappear.\n")
+            delprint("YOU'RE TELEPORTING!\n")
+            delprint("Owen: YOu didn't even bye, how rude.\n")
         elif response == "1":
             delprint("Owen: Not quite. Try again.\n")
         elif response == "3":
             delprint("Owen: Not quite. Try again.\n")
         else:
             delprint("Owen: Not quite. Try again.\n")
+
+    jonInnOwen()
 
      
 
@@ -247,12 +253,26 @@ def kevinForward():
         else:
             delprint("Kevin: What? Try again.\n")
 
-def jonInn():
-    """
-    Going backwards brings you back to the inn"
-    """
-    delprint("Jon: What are you doing back here? Onwards Traveller!")
+def jonInnOwen():
+    response = ""
+    delprint("Jon: Ah welcome back young Traveller. Sorry thats ageist of me.\n")
+    delprint("Jon: It looks like you got Owen's key. I'm surpised.\n")
+    delprint("Jon: Why? Oh eh...you just don't seem too...\n")
+    delprint("Jon: Anyway no more babbling. Where to next?\n")
     
+    while response not in directions: 
+        response = input("right,forward\n")
+        if response == "right":
+            liamRight()
+        elif response == "forward":
+            kevinForward()
+        else:
+            delprint("I'm sorry that is not a valid path.\n")
+
+
+
+
+
 
 
 def main(): 
