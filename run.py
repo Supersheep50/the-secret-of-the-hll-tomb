@@ -118,10 +118,11 @@ def owenLeft():
             delprint("Owen: Very good Traveller. You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
             delprint("You hold a key in your hands \U0001F5DD. \n")
-            delprint("You suddebly start to feel warm and fuzzy.\n")
+            delprint("You suddenly start to feel warm and fuzzy.\n")
             delprint("You look at your hands as they disappear.\n")
             delprint("YOU'RE TELEPORTING!\n")
-            delprint("Owen: YOu didn't even bye, how rude.\n")
+            delprint("Owen: You didn't even say goodbye, how rude.\n")
+            delprint("The inn starts to materialize in front of you.\n")
         elif response == "1":
             delprint("Owen: Not quite. Try again.\n")
         elif response == "3":
@@ -130,8 +131,6 @@ def owenLeft():
             delprint("Owen: Not quite. Try again.\n")
 
     jonInnOwen()
-
-     
 
 def liamRight():
     """
@@ -184,12 +183,17 @@ def liamRight():
             delprint("You look at him impatiently.\n")
             delprint("Liam: Oh fine. Take this too.\n")
             delprint("It is a key in the shape of an L  \U0001F5DD.\n")
+            delprint("All of a sudden a huge bird grabs you by the shoulders \n")
+            delprint("You are carried off and see the inn in the distance.\n")
+            delprint("The bird drops you with a thud.\n")
         elif response == "1":
             delprint("Liam: WRONG. Neep. Try again.\n")
         elif response == "3":
             delprint("Liam: WRONG. Neep. Try again.\n")
         else:
             delprint("Liam: WRONG. Neep. Try again.\n")
+
+    jonInnLiam()
 
 def kevinForward():
     """
@@ -253,9 +257,11 @@ def kevinForward():
         else:
             delprint("Kevin: What? Try again.\n")
 
+    jonInnKevin()
+
 def jonInnOwen():
     response = ""
-    delprint("Jon: Ah welcome back young Traveller. Sorry thats ageist of me.\n")
+    delprint(W+"Jon: Ah welcome back young Traveller. Sorry thats ageist of me.\n")
     delprint("Jon: It looks like you got Owen's key. I'm surpised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...\n")
     delprint("Jon: Anyway no more babbling. Where to next?\n")
@@ -269,8 +275,57 @@ def jonInnOwen():
         else:
             delprint("I'm sorry that is not a valid path.\n")
 
+def jonInnLiam():
+    response = ""
+    delprint(W+"Jon: Ah hello again Traveller. You're not dead!\n")
+    delprint("Jon: Is that Liam's key? Impressive.\n")
+    delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
+    delprint("Jon: Anyway, you must continue on your journey.\n")
+    delprint("Jon: Where to next?\n")
+    
+    while response not in directions: 
+        response = input("left,forward\n")
+        if response == "left":
+            owenLeft()
+        elif response == "forward":
+            kevinForward()
+        else:
+            delprint("I'm sorry that is not a valid path.\n")
 
 
+def jonInnKevin():
+    response = ""
+    delprint(W+"Jon: Ah hello again Traveller. You're not dead!\n")
+    delprint("Jon: Looks like you got Kevin's key.\n")
+    delprint("Jon: Hows his toilet? \n")
+    delprint("Jon: How do I know about it?...nevermind.\n")
+    delprint("Jon: Enough about bowel movements, where to next?\n")
+    
+    while response not in directions: 
+        response = input("left,right\n")
+        if response == "left":
+            owenLeft()
+        elif response == "right":
+            liamRight()
+        else:
+            delprint("I'm sorry that is not a valid path.\n")
+
+
+def temple_of_pods(): 
+    response = ""
+    delprint("Jon: Well, well, well. You did it.\n")
+    delprint("Jon: You have found all 3 keys. Plus lost some weight it seems.\n")
+    delprint("Jon: It is now time for you to enter...\n")
+    delprint("Jon: THE TEMPLE OF THE.....\n")
+    delprint("You hear a low humming noise coming from Jons robe.\n")
+    delprint("It appears to be his self phone. He looks embarassed.\n")
+    delprint("Jon: Excuse me a moment.\n")
+    delprint("He answers the phone \n")
+    delprint("Jon: Yes they're here now.\n")
+    delprint("Jon: NO I AM NOT DOING THE SMOKE & MUSIC THING \n")
+    delprint("Jon glances at you sheepishly and puts away the phone \n")
+    delprint("Jon: Right. Time for you to go then. Good luck! \n")
+    
 
 
 
@@ -280,6 +335,7 @@ def main():
     Run all program functions
     """
     introGame()
+    temple_of_pods()
 
 
 delprint("Welcome to The Secret of the HLL Tomb!\n")
