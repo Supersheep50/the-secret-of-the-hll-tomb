@@ -1,7 +1,7 @@
 import webbrowser
 import emoji
 import sys,time
-def delprint(text="Type a string in",delay_time=.00): 
+def delprint(text="Type a string in",delay_time=.05): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
@@ -225,18 +225,27 @@ def kevinForward():
     
     response = ""
     while response not in answers: 
-        print("Owen: What work can one never finish?\n")
-        response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n")
-        if response == "2":
-            delprint("Owen: Very good Traveller. You're wiser than you look.\n")
-            delprint("Owen: Here take this key. You are one step closer eh.\n")
-            delprint("You hold a key in your hands \U0001F5DD. \n")
-        elif response == "1":
-            delprint("Owen: Not quite. Try again.\n")
+        delprint("Kevin: It is time for your riddle.\n")
+        delprint("Kevin: It won't be easy you know. I'm very good at riddles.\n")
+        delprint("Kevin: Just ask Liam or Owen. Or that weird Jon guy.\n")
+        delprint("Kevin: You know he doesn't even live or work here?\n")
+        delprint("Kevin: Plus that inn has had so many healthcode violations.\n")
+        delprint("Kevin: Ahem, yes the riddle.\n")
+        delprint("Kevin: It is time for your riddle....again\n")
+        delprint("Kevin: What can you serve, but never eat?\n")
+        response = input("1 )A tennis ball | 2) Looks |3) Soup \n")
+        if response == "1":
+            delprint("Kevin: What?! How did you know? Most people say soup.\n")
+            delprint("Kevin: You may be strange looking but you are smart.\n")
+            delprint("He lifts up his wig and pulls out a key \U0001F5DD. \n")
+            delprint("Kevin: You've earned this I suppose.\n")
+            delprint("Kevin: Even though my toilet is still clogged.\n")
+        elif response == "2":
+            delprint("Kevin: Ha! Thats whatever one says. Try again.\n")
         elif response == "3":
-            delprint("Owen: Not quite. Try again.\n")
+            delprint("Kevin: Of course not you fool. Try again.\n")
         else:
-            delprint("Owen: Not quite. Try again.\n")
+            delprint("Kevin: What? Try again.\n")
 
 def jonInn():
     """
