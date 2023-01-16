@@ -22,6 +22,7 @@ yes_no = ["yes","no"]
 directions = ["left","right","forward"]
 answers = ["1","2","3"]
 
+
 def introGame():
     """
     Starts game and intoduces user to the game
@@ -36,8 +37,6 @@ def introGame():
     delprint("Jon: Welcome Traveller!\n")
     delprint("Jon: You look weary? Long Uber?\n")
     delprint("Jon: My name is Jon and I will be your guide through this Tomb!\n")
-    delprint("Jon: Now, what is your name?\n")
-    name = input()
     delprint("Jon: Nice to meet you "+name+".\n")
 
     response = ""
@@ -95,7 +94,7 @@ def owenLeft():
     
     response = ""
     while response not in yes_no: 
-        response = input("Owen: Wait, I know you. Are you ""?\n")
+        response = input("Owen: Wait, I know you. Are you "+name+" ?\n")
         if response == "yes":
             delprint("Owen: I have heard much about you. I am Owen eh.\n")
             delprint("He sits down on a chair outside of the melting house.\n")
@@ -334,8 +333,16 @@ def main():
     """
     Run all program functions
     """
+    """
+    tombs = {
+        'Owens Tomb':{'item':'Owens key'},
+        'Liams Tomb':{'item':'Liams key'},
+        'Kevins Tomb':{'item':'Kevins key'}
+    }
+    """
     introGame()
     temple_of_pods()
+
 
 
 delprint("Welcome to The Secret of the HLL Tomb!\n")
@@ -343,5 +350,10 @@ delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
 delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
 delprint("Together, they will open a door at the end of the tomb.\n")
 delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
-print("Good luck!\n")
+name = input("Now, what is your name, traveller?\n")
+print("Good luck "+name+"!\n")
 main()
+
+
+
+
