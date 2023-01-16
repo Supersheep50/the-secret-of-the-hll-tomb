@@ -37,7 +37,8 @@ def introGame():
     delprint("Jon: Welcome Traveller!\n")
     delprint("Jon: You look weary? Long Uber?\n")
     delprint("Jon: My name is Jon and I will be your guide through this Tomb!\n")
-    delprint("Jon: Nice to meet you "+name+".\n")
+    delprint("Jon: "+name+" right? What a lovely name.\n")
+    delprint("Jon: I knew a "+name+" once. A Traveller. Oh that was you.\n")
 
     response = ""
     while response not in yes_no: 
@@ -106,6 +107,7 @@ def owenLeft():
             delprint("Owen: Then I can not help you eh.\n")
             delprint("Owen: Please leave via that escalator over there. \n")
             delprint("He laughs a huge laugh and asks the question anyway.\n")
+            delprint("Owen: Time for your riddle. I hope you are ready eh.\n")
         else:
             delprint("Owen: Eh?\n")
     
@@ -114,7 +116,7 @@ def owenLeft():
         print("Owen: What work can one never finish?\n")
         response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n")
         if response == "2":
-            delprint("Owen: Very good Traveller. You're wiser than you look.\n")
+            delprint("Owen: Very good "+name+". You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
             delprint("You hold a key in your hands \U0001F5DD. \n")
             delprint("You suddenly start to feel warm and fuzzy.\n")
@@ -122,14 +124,19 @@ def owenLeft():
             delprint("YOU'RE TELEPORTING!\n")
             delprint("Owen: You didn't even say goodbye, how rude.\n")
             delprint("The inn starts to materialize in front of you.\n")
+            jonInnOwen()
         elif response == "1":
-            delprint("Owen: Not quite. Try again.\n")
+            delprint("Owen: Not quite I am afraid eh.\n")
+            delprint("G A M E - O V E R \n")
+            break 
         elif response == "3":
-            delprint("Owen: Not quite. Try again.\n")
+            delprint("Owen: Not quite I am afraid eh.\n")
+            delprint("G A M E - O V E R \n")
+            break
         else:
             delprint("Owen: Not quite. Try again.\n")
 
-    jonInnOwen()
+    
 
 def liamRight():
     """
@@ -147,7 +154,7 @@ def liamRight():
     delprint("He has a long ragged beard with a scar across his face.\n")
     delprint("Liam: Ha! A Traveller! Neeep!\n")
     delprint("His voice is so high and shrill it hurts your ears.\n")
-    delprint("Liam: You scared me. You must be the Traveller I heard about.\n")
+    delprint("Liam: You scared me. You must be "+name+" I heard all about.\n")
     
     
     response = ""
@@ -185,14 +192,19 @@ def liamRight():
             delprint("All of a sudden a huge bird grabs you by the shoulders \n")
             delprint("You are carried off and see the inn in the distance.\n")
             delprint("The bird drops you with a thud.\n")
+            jonInnLiam()
         elif response == "1":
-            delprint("Liam: WRONG. Neep. Try again.\n")
-        elif response == "3":
-            delprint("Liam: WRONG. Neep. Try again.\n")
+            delprint("Liam: Oh dear thats not right. \n")
+            delprint("G A M E - O V E R \n")
+            break
+        elif response == "2":
+            delprint("Liam: Oh dear thats not right. \n")
+            delprint("G A M E - O V E R \n")
+            break
         else:
-            delprint("Liam: WRONG. Neep. Try again.\n")
+            delprint("Liam: WHAT?!. Neep. Try again.\n")
 
-    jonInnLiam()
+   
 
 def kevinForward():
     """
@@ -221,10 +233,10 @@ def kevinForward():
             delprint("Some of the gold wallpaper starts to peel from the walls.\n")
             delprint("He continues to stand with his arms aloft for some time.\n")
             delprint("Kevin: Hmm if you're not the plumber....\n")
-            delprint("Kevin: You must be this Traveller I hear about.\n")
+            delprint("Kevin: You must be this "+name+" I hear about.\n")
             
         elif response == "yes":
-            delprint("Kevin: Oh thank god. I've been waiting for days! \n")
+            delprint(O+"Kevin: Oh thank god. I've been waiting for days! \n")
             delprint("Kevin: The guest bedroom toilet is terribly clogged.\n")
             delprint("Kevin: That strange girl Steph stayed here last night... \n")
             delprint("Kevin: ...everytime she stays this happens.\n")
@@ -249,18 +261,26 @@ def kevinForward():
             delprint("He lifts up his wig and pulls out a key \U0001F5DD. \n")
             delprint("Kevin: You've earned this I suppose.\n")
             delprint("Kevin: Even though my toilet is still clogged.\n")
+            delprint("You fall through another trapdoor.\n")
+            delprint("You feel like you're falling upwards.\n")
+            delprint("You land with a oof directly on Jon")
+            jonInnKevin()
         elif response == "2":
-            delprint("Kevin: Ha! Thats whatever one says. Try again.\n")
+            delprint("Kevin: Nope, that ain't it. \n")
+            delprint("G A M E - O V E R \n")
+            break
         elif response == "3":
-            delprint("Kevin: Of course not you fool. Try again.\n")
+            delprint("Kevin: Nope, that ain't it. \n")
+            delprint("G A M E - O V E R \n")
+            break
         else:
             delprint("Kevin: What? Try again.\n")
 
-    jonInnKevin()
+   
 
 def jonInnOwen():
     response = ""
-    delprint(W+"Jon: Ah welcome back young Traveller. Sorry thats ageist of me.\n")
+    delprint(W+"Jon: Ah welcome back young "+name+". Sorry thats ageist of me.\n")
     delprint("Jon: It looks like you got Owen's key. I'm surpised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...\n")
     delprint("Jon: Anyway no more babbling. Where to next?\n")
@@ -276,7 +296,7 @@ def jonInnOwen():
 
 def jonInnLiam():
     response = ""
-    delprint(W+"Jon: Ah hello again Traveller. You're not dead!\n")
+    delprint(W+"Jon: Ah hello again "+name+". You're not dead!\n")
     delprint("Jon: Is that Liam's key? Impressive.\n")
     delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
     delprint("Jon: Anyway, you must continue on your journey.\n")
@@ -294,8 +314,8 @@ def jonInnLiam():
 
 def jonInnKevin():
     response = ""
-    delprint(W+"Jon: Ah hello again Traveller. You're not dead!\n")
-    delprint("Jon: Looks like you got Kevin's key.\n")
+    delprint(W+"Jon: Good lord "+name+". You nearly killed me.\n")
+    delprint("Jon: Looks like you got Kevin's key and ruined my hat.\n")
     delprint("Jon: Hows his toilet? \n")
     delprint("Jon: How do I know about it?...nevermind.\n")
     delprint("Jon: Enough about bowel movements, where to next?\n")
@@ -341,7 +361,7 @@ def main():
     }
     """
     introGame()
-    temple_of_pods()
+    #temple_of_pods()
 
 
 
