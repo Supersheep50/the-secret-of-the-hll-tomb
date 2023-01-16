@@ -38,7 +38,8 @@ def introGame():
     delprint("Jon: You look weary? Long Uber?\n")
     delprint("Jon: My name is Jon and I will be your guide through this Tomb!\n")
     delprint("Jon: "+name+" right? What a lovely name.\n")
-    delprint("Jon: I knew a "+name+" once. A Traveller. Oh that was you.\n")
+    delprint("Jon: I knew a "+name+" once. A Traveller. Died in this very tomb\n")
+    delprint("Jon: Eh....I'm sure you'll be fine though.\n")
 
     response = ""
     while response not in yes_no: 
@@ -128,6 +129,7 @@ def owenLeft():
         elif response == "1":
             delprint("Owen: Not quite I am afraid eh.\n")
             delprint("G A M E - O V E R \n")
+            tryAgain()
             break 
         elif response == "3":
             delprint("Owen: Not quite I am afraid eh.\n")
@@ -328,6 +330,20 @@ def jonInnKevin():
             liamRight()
         else:
             delprint("I'm sorry that is not a valid path.\n")
+
+
+def tryAgain():
+    response = ""
+    while response not in yes_no: 
+        response = input(W+"Try again?\n")
+        if response == "yes":
+            introGame()
+        elif response == "no":
+            break
+        else:
+            delprint("That is not a valid option")
+
+
 
 
 def temple_of_pods(): 
