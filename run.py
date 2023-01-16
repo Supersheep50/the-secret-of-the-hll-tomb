@@ -19,14 +19,15 @@ P  = '\033[35m' # purple
 
 
 yes_no = ["yes","no"]
-directions = ["left","right","forward"]
 answers = ["1","2","3"]
 
 
-def introGame():
+def startGame():
     """
     Starts game and intoduces user to the game
     """
+    global inventory
+    global itemAdd
     delprint("You stand in front of an old stone passageway.\n")
     delprint("You push on the wall and it slowly slides open. You step inside.\n")
     delprint("It is a huge cave.\n") 
@@ -66,10 +67,10 @@ def introGame():
 
     delprint("The shadowy (and very handsome) stranger disappears.\n")
     delprint("You see a path to your left.\n")
-    owenLeft()
+    owenTomb()
    
 
-def owenLeft():
+def owenTomb():
     """
     The room to the left with the stranger named Owen
     """
@@ -105,7 +106,7 @@ def owenLeft():
         if response == "2":
             delprint("Owen: Very good "+name+". You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
-            delprint("You hold a key in your hands \U0001F5DD. \n")
+            delprint("You hold a key in your hands \U0001F5DD. \n")   
             delprint("You suddenly start to feel warm and fuzzy.\n")
             delprint("You look at your hands as they disappear.\n")
             delprint("YOU'RE TELEPORTING!\n")
@@ -127,11 +128,10 @@ def owenLeft():
 
     
 
-def liamRight():
+def liamTomb():
     """
     The room to the right with the stranger named Liam
     """
-    directions = ["right"]
     delprint("You decide to take the path to the right.\n")
     delprint("It is a long stone path with Lilt trees on either side.\n")
     delprint("In the distance, you see a small cart blocking the path.\n")
@@ -197,7 +197,7 @@ def liamRight():
 
    
 
-def kevinForward():
+def kevinTomb():
     """
     The room straight ahead with the stranger named Kevin
     """
@@ -254,7 +254,7 @@ def kevinForward():
             delprint("Kevin: Even though my toilet is still clogged.\n")
             delprint("You fall through another trapdoor.\n")
             delprint("You feel like you're falling upwards.\n")
-            delprint("You land with a oof directly on Jon.\nlef")
+            delprint("You land with a oof directly on Jon.\n")
             jonInnKevin()
         elif response == "2":
             delprint("Kevin: Nope, that ain't it. \n")
@@ -276,9 +276,10 @@ def jonInnOwen():
     delprint(W+"Jon: Ah welcome back young "+name+". Sorry thats ageist of me.\n")
     delprint("Jon: It looks like you got Owen's key. I'm surpised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...\n")
+    delprint("Lets just take a quick look at your inventory.\n")
     delprint("Jon: Anyway no more babbling. Time for your next tomb.\n")
     delprint("Jon: You're really in for a treat.\n")
-    liamRight()
+    liamTomb()
     
 
 def jonInnLiam():
@@ -287,7 +288,7 @@ def jonInnLiam():
     delprint("Jon: Is that Liam's key? Impressive.\n")
     delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
     delprint("Jon: Anyway, you must continue on your journey.\n")
-    kevinForward()
+    kevinTomb()
     
 
 
@@ -301,8 +302,6 @@ def jonInnKevin():
     temple_of_pods()
     
    
-
-
 def tryAgain():
     response = ""
     while response not in yes_no: 
@@ -315,8 +314,6 @@ def tryAgain():
             delprint("That is not a valid option")
 
 
-
-
 def temple_of_pods(): 
     response = ""
     delprint("Jon: Well, well, well. You did it.\n")
@@ -324,7 +321,7 @@ def temple_of_pods():
     delprint("Jon: It is now time for you to enter...\n")
     delprint("Jon: THE TEMPLE OF THE.....\n")
     delprint("You hear a low humming noise coming from Jons robe.\n")
-    delprint("It appears to be his self phone. He looks embarassed.\n")
+    delprint("It appears to be his cell phone. He looks embarassed.\n")
     delprint("Jon: Excuse me a moment.\n")
     delprint("He answers the phone \n")
     delprint("Jon: Yes they're here now.\n")
@@ -332,8 +329,6 @@ def temple_of_pods():
     delprint("Jon glances at you sheepishly and puts away the phone \n")
     delprint("Jon: Right. Time for you to go then. Good luck! \n")
     
-
-
 def main(): 
     """
     Run all program functions
@@ -345,8 +340,8 @@ def main():
         'Kevins Tomb':{'item':'Kevins key'}
     }
     """
-    introGame()
-    temple_of_pods()
+    startGame()
+   
 
 
 
