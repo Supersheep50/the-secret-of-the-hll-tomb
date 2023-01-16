@@ -65,28 +65,14 @@ def introGame():
             delprint("Jon: Sorry, I didn't understand that.\n")
 
     delprint("The shadowy (and very handsome) stranger disappears.\n")
-    delprint("There is a crossroads at the inn.\n")
-    delprint("Each road leading to a different tomb.\n")
-    delprint("Which way will you go?\n")
-
-    while response not in directions: 
-        response = input("left, right, forward \n")
-        if response == "left":
-            owenLeft()
-        elif response == "right":
-            liamRight()
-        elif response == "forward":
-            kevinForward()
-        else:
-            delprint("I'm sorry that is not a valid path.\n")
-
+    delprint("You see a path to your left.\n")
+    owenLeft()
+   
 
 def owenLeft():
     """
     The room to the left with the stranger named Owen
     """
-    directions = ["left"]
-    delprint("You decide to take the path to the left.\n")
     delprint("It is a long dirt path with bare trees on either side.\n")
     delprint("Up ahead, you see a small house made entirely of maple syrup.\n")
     delprint("It appears to be melting and reforming all at once.\n")
@@ -130,11 +116,12 @@ def owenLeft():
             delprint("Owen: Not quite I am afraid eh.\n")
             delprint("G A M E - O V E R \n")
             tryAgain()
-            break 
+             
         elif response == "3":
             delprint("Owen: Not quite I am afraid eh.\n")
             delprint("G A M E - O V E R \n")
-            break
+            tryAgain()
+            
         else:
             delprint("Owen: Not quite. Try again.\n")
 
@@ -198,11 +185,13 @@ def liamRight():
         elif response == "1":
             delprint("Liam: Oh dear thats not right. \n")
             delprint("G A M E - O V E R \n")
-            break
+            tryAgain()
+            
         elif response == "2":
             delprint("Liam: Oh dear thats not right. \n")
             delprint("G A M E - O V E R \n")
-            break
+            tryAgain()
+            
         else:
             delprint("Liam: WHAT?!. Neep. Try again.\n")
 
@@ -265,16 +254,18 @@ def kevinForward():
             delprint("Kevin: Even though my toilet is still clogged.\n")
             delprint("You fall through another trapdoor.\n")
             delprint("You feel like you're falling upwards.\n")
-            delprint("You land with a oof directly on Jon")
+            delprint("You land with a oof directly on Jon.\nlef")
             jonInnKevin()
         elif response == "2":
             delprint("Kevin: Nope, that ain't it. \n")
             delprint("G A M E - O V E R \n")
-            break
+            tryAgain()
+            
         elif response == "3":
             delprint("Kevin: Nope, that ain't it. \n")
             delprint("G A M E - O V E R \n")
-            break
+            tryAgain()
+            
         else:
             delprint("Kevin: What? Try again.\n")
 
@@ -285,16 +276,10 @@ def jonInnOwen():
     delprint(W+"Jon: Ah welcome back young "+name+". Sorry thats ageist of me.\n")
     delprint("Jon: It looks like you got Owen's key. I'm surpised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...\n")
-    delprint("Jon: Anyway no more babbling. Where to next?\n")
+    delprint("Jon: Anyway no more babbling. Time for your next tomb.\n")
+    delprint("Jon: You're really in for a treat.\n")
+    liamRight()
     
-    while response not in directions: 
-        response = input("right,forward\n")
-        if response == "right":
-            liamRight()
-        elif response == "forward":
-            kevinForward()
-        else:
-            delprint("I'm sorry that is not a valid path.\n")
 
 def jonInnLiam():
     response = ""
@@ -302,16 +287,8 @@ def jonInnLiam():
     delprint("Jon: Is that Liam's key? Impressive.\n")
     delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
     delprint("Jon: Anyway, you must continue on your journey.\n")
-    delprint("Jon: Where to next?\n")
+    kevinForward()
     
-    while response not in directions: 
-        response = input("left,forward\n")
-        if response == "left":
-            owenLeft()
-        elif response == "forward":
-            kevinForward()
-        else:
-            delprint("I'm sorry that is not a valid path.\n")
 
 
 def jonInnKevin():
@@ -320,16 +297,10 @@ def jonInnKevin():
     delprint("Jon: Looks like you got Kevin's key and ruined my hat.\n")
     delprint("Jon: Hows his toilet? \n")
     delprint("Jon: How do I know about it?...nevermind.\n")
-    delprint("Jon: Enough about bowel movements, where to next?\n")
+    delprint("Jon: Enough about bowel movements, you are ready!\n")
+    temple_of_pods()
     
-    while response not in directions: 
-        response = input("left,right\n")
-        if response == "left":
-            owenLeft()
-        elif response == "right":
-            liamRight()
-        else:
-            delprint("I'm sorry that is not a valid path.\n")
+   
 
 
 def tryAgain():
@@ -339,7 +310,7 @@ def tryAgain():
         if response == "yes":
             introGame()
         elif response == "no":
-            break
+            exit()
         else:
             delprint("That is not a valid option")
 
@@ -363,8 +334,6 @@ def temple_of_pods():
     
 
 
-
-
 def main(): 
     """
     Run all program functions
@@ -377,7 +346,7 @@ def main():
     }
     """
     introGame()
-    #temple_of_pods()
+    temple_of_pods()
 
 
 
