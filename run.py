@@ -413,7 +413,7 @@ def jonInnKevin():
             delprint("Jon: I underestimated you\n")
             delprint("Jon: I really wish you'd get rid of those photos though\n")
         elif response == "no":
-            delprint("Jon: FINE. I dont even want to look \n")
+            delprint("Jon: FINE. I dont even want to look. \n")
             delprint("Jon: I bet its just full of weird photos anyway.\n")
             delprint("He storms into the inn and shuts the door behind him.\n")
         else:
@@ -422,15 +422,19 @@ def jonInnKevin():
     delprint("Jon: Hows his toilet by the way? \n")
     delprint("Jon: How do I know about it?...nevermind.\n")
     delprint("Jon: Enough about bowel movements.\n")
+    delprint("Jon: Are you ready to go to the Temple of the Pods?\n")
+    response = ""
     while response not in yes_no: 
-        delprint("Jon: Are you ready to go to the Temple of the Pods?\n")
-        response = input("(yes / no / I'm scared)\n").lower()
+        response = input("(yes / no / what?)\n").lower()
         if response == "yes":
             temple_of_pods()
         elif response == "no":
             delprint("Jon: Well tough luck you ain't staying with me.\n")
             delprint("He starts to walk on ahead. You follow.\n")
             temple_of_pods()
+        elif response == "what?":
+            delprint("Jon takes a big breath and readies his smoke machine.\n")
+            delprint("He thinks better of it and stops.")
         else: 
             delprint("Jon: THE TEMPLE OF THE PODS. ARE YOU DEAF?\n")
     
