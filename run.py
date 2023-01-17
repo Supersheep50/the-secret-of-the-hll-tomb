@@ -17,10 +17,16 @@ O  = '\033[33m' # orange
 B  = '\033[34m' # blue
 P  = '\033[35m' # purple
 
-
+inventory = ["water bottle", "compass", "weird photos of that guy Jon"]
 yes_no = ["yes","no"]
 answers = ["1","2","3"]
 
+def addToInventory(item):
+    inventory.append(item)
+
+def printInventory():
+    for i in inventory:
+        print(i)
 
 def startGame():
     """
@@ -40,7 +46,8 @@ def startGame():
     delprint("Jon: My name is Jon and I will be your guide through this Tomb!\n")
     delprint("Jon: "+name+" right? What a lovely name.\n")
     delprint("Jon: I knew a "+name+" once. A Traveller. Died in this very tomb\n")
-    delprint("Jon: Eh....I'm sure you'll be fine though.\n")
+    delprint("Jon: I see you brought a bag of inventory with you. No sword?\n")
+    delprint("Jon: Eh....I'm sure you'll be fine.\n")
 
     response = ""
     while response not in yes_no: 
@@ -106,6 +113,7 @@ def owenTomb():
         if response == "2":
             delprint("Owen: Very good "+name+". You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
+            addToInventory("Owens key")
             delprint("You hold a key in your hands \U0001F5DD. \n")   
             delprint("You suddenly start to feel warm and fuzzy.\n")
             delprint("You look at your hands as they disappear.\n")
@@ -274,9 +282,26 @@ def kevinTomb():
 def jonInnOwen():
     response = ""
     delprint(W+"Jon: Ah welcome back young "+name+". Sorry thats ageist of me.\n")
-    delprint("Jon: It looks like you got Owen's key. I'm surpised.\n")
-    delprint("Jon: Why? Oh eh...you just don't seem too...\n")
-    delprint("Lets just take a quick look at your inventory.\n")
+    delprint("Jon: It looks like you survived Owen's Tomb. I'm surprised.\n")
+    delprint("Jon: Why? Oh eh...you just don't seem too...nevermind.\n")
+    while response not in yes_no: 
+        response = input("Jon: Lets take a look at your inventory, shall we?\n")
+        if response == "yes":
+            printInventory()
+            delprint("Jon: Oh wow! You got Owens key! Well done!\n")
+            delprint("Jon: You're certainly on your way now traveller.\n")
+            delprint("Jon: We should definitely celebrate..wait a minute...\n")
+            delprint("He stares confused at the photo album you have of him.\n")
+            delprint("You have absolutely no idea how it got in your bag.\n")
+            delprint("Jon: WHERE ON EARTH DID THESE COME FROM?! \n")
+            delprint("He looks embarassed and begins to turn red. As do you \n")
+        elif response == "no":
+            delprint("Jon: Ooooh someones hiding something aren't they?\n")
+            delprint("Jon: Nevermind! I shall respect your privacy. \n")
+            delprint("He eyes your bag keenly.\n")
+        else:
+            delprint("Jon: What? I SAID DO YOU WANT TO CHECK YOUR INVENTORY?\n")
+
     delprint("Jon: Anyway no more babbling. Time for your next tomb.\n")
     delprint("Jon: You're really in for a treat.\n")
     liamTomb()
