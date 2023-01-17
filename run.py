@@ -92,17 +92,12 @@ def innCrossroads():
             delprint("You turn around.\n")
             innCrossroads()
         elif response == "forwards":
-            delprint("You deicde to go right.\n")
+            delprint("You decide to go forwards.\n")
             delprint("You suddenly come across Jon crying under a tree.\n")
             delprint("He sees you. Its really awkward. You turn around.\n")
             innCrossroads()
         else:
             delprint("Thats not a direction there pal. Try again.\n")
-
-
-
-    
-   
 
 def owenTomb():
     """
@@ -237,8 +232,6 @@ def kevinTomb():
     """
     The room straight ahead with the stranger named Kevin
     """
-    directions = ["forward"]
-    delprint("You decide to take the path forwards.\n")
     delprint("It is a long golden path made out of bricks.\n")
     delprint("You feel eyes watching you from the trees.\n")
     delprint("Suddenly, without warning you fall through a trapdoor.\n")
@@ -382,9 +375,30 @@ def jonInnLiam():
     delprint("Jon: Anyway. You met Liam the Vagabond.\n")
     delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
     delprint("Jon: Anyway, you must continue on your journey.\n")
-    kevinTomb()
+    jonInnLiamCrossroads()
     
-
+def jonInnLiamCrossroads():
+    response = ""
+    delprint("You are back at a crossroads beside the inn.\n")
+    delprint("It looks different again. The inn is now...upside down?\n")
+    while response not in directions: 
+        response = input("Which way will you go?\n")
+        if response == "left":
+            delprint("You decide to go left.\n")
+            delprint("A man named Pa blocks your path.\n")
+            delprint("He tries to rob you but you break free and run.\n")
+            jonInnLiamCrossroads()
+        elif response == "right":
+            delprint("You decide to go right.\n")
+            delprint("Two charity workers with clipboards are in front of you\n")
+            delprint("You pretend to get a phonecall and turn around \n")
+            delprint("They look disappointed.\n")
+            jonInnLiamCrossroads()
+        elif response == "forwards":
+            delprint("You deicde to go forwards.\n")
+            kevinTomb()
+        else:
+            delprint("Thats not a direction there pal. Try again.\n")
 
 def jonInnKevin():
     response = ""
@@ -415,7 +429,7 @@ def tryAgain():
     while response not in yes_no: 
         response = input(W+"Try again?\n")
         if response == "yes":
-            introGame()
+            startGame()
         elif response == "no":
             exit()
         else:
@@ -443,8 +457,6 @@ def main():
     """
     startGame()
    
-
-
 
 delprint("Welcome to The Secret of the HLL Tomb!\n")
 delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
