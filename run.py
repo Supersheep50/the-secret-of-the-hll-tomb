@@ -17,6 +17,7 @@ O  = '\033[33m' # orange
 B  = '\033[34m' # blue
 P  = '\033[35m' # purple
 
+directions = ["left", "right","forwards"]
 inventory = ["WATER BOTTLE", "COMPASS", "WEIRD PHOTOS OF THAT GUY JON"]
 yes_no = ["yes","no"]
 answers = ["1","2","3"]
@@ -55,6 +56,7 @@ def startGame():
         if response == "yes":
             delprint("Jon: Ah excellent! I knew I recognized your ugly mug.\n")
             delprint("Jon: No need for instructions then! Off you pop now.\n")
+            delprint("The shadowy (and very handsome) stranger disappears.\n")
         elif response == "no":
             delprint("Jon: Ah a newbie! Well, let me impart some wisdom.\n")
             delprint("Jon: You are here to collect the 3 HLL keys.\n")
@@ -69,12 +71,37 @@ def startGame():
             delprint("Jon: THE TEMPLE OF THE PODS!!!\n")
             delprint("Smoke billowed & dramatic music played \U0001F3B6 \n")
             delprint("Jon: Ahem, anyway. Off you pop now.\n")
+            delprint("The shadowy (and very handsome) stranger disappears.\n")
         else:
             delprint("Jon: Sorry, I didn't understand that.\n")
+    innCrossroads()
 
-    delprint("The shadowy (and very handsome) stranger disappears.\n")
-    delprint("You see a path to your left.\n")
-    owenTomb()
+
+def innCrossroads():
+    response = ""
+    delprint("You are at a crossroads beside the inn.\n")
+    while response not in directions: 
+        response = input("Which way will you go?\n")
+        if response == "right":
+            delprint("You decide to go right.\n")
+            owenTomb()
+        elif response == "left":
+            delprint("You decide to go left.\n")
+            delprint("Your path is quickly blocked by some goths dancing.\n")
+            delprint("You faintly hear Thomas the Tank Engine music...\n")
+            delprint("You turn around.\n")
+            innCrossroads()
+        elif response == "forwards":
+            delprint("You deicde to go right.\n")
+            delprint("You suddenly come across Jon crying under a tree.\n")
+            delprint("He sees you. Its really awkward. You turn around.\n")
+            innCrossroads()
+        else:
+            delprint("Thats not a direction there pal. Try again.\n")
+
+
+
+    
    
 
 def owenTomb():
@@ -140,7 +167,6 @@ def liamTomb():
     """
     The room to the right with the stranger named Liam
     """
-    delprint("You decide to take the path to the right.\n")
     delprint("It is a long stone path with Lilt trees on either side.\n")
     delprint("In the distance, you see a small cart blocking the path.\n")
     delprint("The cart appears to be missing a wheel. A man stands nearby.\n")
@@ -308,8 +334,33 @@ def jonInnOwen():
 
     delprint("Jon: Anyway no more babbling. Time for your next tomb.\n")
     delprint("Jon: You're really in for a treat.\n")
-    liamTomb()
-    
+    jonInnOwenCrossroads()
+
+def jonInnOwenCrossroads():
+    response = ""
+    delprint("You are back at a crossroads beside the inn.\n")
+    delprint("It looks different. Almost reversed?\n")
+    while response not in directions: 
+        response = input("Which way will you go?\n")
+        if response == "left":
+            delprint("You decide to go left.\n")
+            liamTomb()
+        elif response == "right":
+            delprint("You decide to go right.\n")
+            delprint("A massive Snorlax blocks your path.\n")
+            delprint("Its watching a Jordan Peterson YouTube video.\n")
+            delprint("It wants to talk to you about it.\n")
+            delprint("You turn around.\n")
+            jonInnOwenCrossroads()
+        elif response == "forwards":
+            delprint("You deicde to go forward.\n")
+            delprint("Jon is crying again but this time behind a rock.\n")
+            delprint("He seems to be holding a photo of Owen.\n")
+            delprint("You turn around.\n")
+            jonInnOwenCrossroads()
+        else:
+            delprint("Thats not a direction there pal. Try again.\n")
+
 
 def jonInnLiam():
     response = ""
@@ -321,18 +372,39 @@ def jonInnLiam():
             delprint("Jon: Ah wonderful stuff. Two out of 3 now!\n")
             delprint("Jon: Oh. You still have those photos and....MORE?\n")
             delprint("Jon: You are quite an odd person "+name+".\n")
-            delprint("Jon: Anyway. You met Liam the Vagabond.\n")
-            delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
-            delprint("Jon: Anyway, you must continue on your journey.\n")
-            kevinTomb()
+        elif response == "no":
+            delprint("Jon: What?! Why not?!\n")
+            delprint("Jon: If you're hiding something "+name+" I'll find out\n")
+            delprint("He seems to pout and kick at a loose stone.\n")
+        else:
+            delprint("Jon: What? I SAID DO YOU WANT TO CHECK YOUR INVENTORY?\n")
+
+    delprint("Jon: Anyway. You met Liam the Vagabond.\n")
+    delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
+    delprint("Jon: Anyway, you must continue on your journey.\n")
+    kevinTomb()
     
 
 
 def jonInnKevin():
     response = ""
     delprint(W+"Jon: Good lord "+name+". You nearly killed me.\n")
-    delprint("Jon: Looks like you got Kevin's key and ruined my hat.\n")
-    delprint("Jon: Hows his toilet? \n")
+    delprint("Jon: You've ruined my hat and crushed my vape.\n")
+    while response not in yes_no: 
+        response = input("Jon: Did you get Kevins key?\n")
+        if response == "yes":
+            printInventory()
+            delprint("Jon: My goodness "+name+" you've done it!\n")
+            delprint("Jon: I underestimated you\n")
+            delprint("Jon: I really wish you'd get rid of those photos though\n")
+        elif response == "no":
+            delprint("Jon: FINE. I dont even want to look \n")
+            delprint("Jon: I bet its just full of weird photos anyway.\n")
+            delprint("He storms into the inn and shuts the door behind him.\n")
+        else:
+            delprint("Jon: What? I SAID DO YOU WANT TO CHECK YOUR INVENTORY?\n")
+
+    delprint("Jon: Hows his toilet by the way? \n")
     delprint("Jon: How do I know about it?...nevermind.\n")
     delprint("Jon: Enough about bowel movements, you are ready!\n")
     temple_of_pods()
@@ -352,7 +424,7 @@ def tryAgain():
 
 def temple_of_pods(): 
     response = ""
-    delprint("Jon: Well, well, well. You did it.\n")
+    delprint(B+"Jon: Well, well, well. You did it.\n")
     delprint("Jon: You have found all 3 keys. Plus lost some weight it seems.\n")
     delprint("Jon: It is now time for you to enter...\n")
     delprint("Jon: THE TEMPLE OF THE.....\n")
@@ -368,13 +440,6 @@ def temple_of_pods():
 def main(): 
     """
     Run all program functions
-    """
-    """
-    tombs = {
-        'Owens Tomb':{'item':'Owens key'},
-        'Liams Tomb':{'item':'Liams key'},
-        'Kevins Tomb':{'item':'Kevins key'}
-    }
     """
     startGame()
    
