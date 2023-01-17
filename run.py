@@ -35,7 +35,7 @@ def startGame():
     """
     global inventory
     global itemAdd
-    delprint("You stand in front of an old stone passageway.\n")
+    delprint(P+"You stand in front of an old stone passageway.\n")
     delprint("You push on the wall and it slowly slides open. You step inside.\n")
     delprint("It is a huge cave.\n") 
     delprint("However, open fields & trees stretch far into the distance.\n")
@@ -421,8 +421,18 @@ def jonInnKevin():
 
     delprint("Jon: Hows his toilet by the way? \n")
     delprint("Jon: How do I know about it?...nevermind.\n")
-    delprint("Jon: Enough about bowel movements, you are ready!\n")
-    temple_of_pods()
+    delprint("Jon: Enough about bowel movements.\n")
+    while response not in yes_no: 
+        delprint("Jon: Are you ready to go to the Temple of the Pods?\n")
+        response = input("(yes / no / I'm scared)\n").lower()
+        if response == "yes":
+            temple_of_pods()
+        elif response == "no":
+            delprint("Jon: Well tough luck you ain't staying with me.\n")
+            delprint("He starts to walk on ahead. You follow.\n")
+            temple_of_pods()
+        else: 
+            delprint("Jon: THE TEMPLE OF THE PODS. ARE YOU DEAF?\n")
     
    
 def tryAgain():
