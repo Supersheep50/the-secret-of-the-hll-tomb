@@ -53,7 +53,7 @@ def startGame():
     response = ""
     while response not in yes_no: 
         delprint("Jon: Have you visted here before?\n")
-        response = input("(yes / no)\n")
+        response = input("(yes / no)\n").lower()
         if response == "yes":
             delprint("Jon: Ah excellent! I knew I recognized your ugly mug.\n")
             delprint("Jon: No need for instructions then! Off you pop now.\n")
@@ -77,14 +77,13 @@ def startGame():
             delprint("Jon: Sorry, I didn't understand that.\n")
     innCrossroads()
 
-
 def innCrossroads():
     response = ""
     directions = ["left", "right","forwards"]
     delprint("You are at a crossroads beside the inn.\n")
     while response not in directions: 
         delprint("Which way will you go?\n")
-        response = input("(left / right / forwards)\n")
+        response = input("(left / right / forwards)\n").lower()
         if response == "right":
             delprint("You decide to go right.\n")
             owenTomb()
@@ -116,7 +115,7 @@ def owenTomb():
     response = ""
     while response not in yes_no: 
         delprint("Owen: Wait, I know you. Are you "+name+" ?\n")
-        response = input("(yes / no)\n")
+        response = input("(yes / no)\n").lower()
         if response == "yes":
             delprint("Owen: I have heard much about you. I am Owen eh.\n")
             delprint("He sits down on a chair outside of the melting house.\n")
@@ -135,7 +134,7 @@ def owenTomb():
     response = ""
     while response not in answers: 
         print("Owen: What work can one never finish?\n")
-        response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n")
+        response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n").lower()
         if response == "2":
             delprint("Owen: Very good "+name+". You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
@@ -160,8 +159,6 @@ def owenTomb():
         else:
             delprint("Owen: Not quite. Try again.\n")
 
-    
-
 def liamTomb():
     """
     The room to the right with the stranger named Liam
@@ -178,11 +175,10 @@ def liamTomb():
     delprint("His voice is so high and shrill it hurts your ears.\n")
     delprint("Liam: You scared me. You must be "+name+" I heard all about.\n")
     
-    
     response = ""
     while response not in yes_no: 
         delprint("Liam: Do you love Lilt like I? Neeep!\n")
-        response = input("(yes / no)\n")
+        response = input("(yes / no)\n").lower()
         if response == "yes":
             delprint("Liam: Excellent. I am Liam the Vagabond. Neeep!\n")
             delprint("He does a small jig that takes several minutes.\n")
@@ -200,12 +196,11 @@ def liamTomb():
         else:
             delprint("Liam: WHAT? I can't hear you, speak up.\n")
     
-
     response = ""
     while response not in answers: 
         delprint("Liam: I DO NOT BELIEVE YOU!! NEEEEEP!\n")
         delprint("Liam: Do you luv Lilt?? \n")
-        response = input("1 )I LOVE LILT | 2) LILT IS THE BEST |3) I LUV LILT \n")
+        response = input("1 )I LOVE LILT | 2) LILT IS THE BEST |3) I LUV LILT \n").lower()
         if response == "3":
             delprint("Liam: Hmmm FINE. I believe you. Take this.\n")
             delprint("He hands you an empty can of the beverage known as Lilt.\n")
@@ -231,8 +226,6 @@ def liamTomb():
         else:
             delprint("Liam: WHAT?!. Neep. Try again.\n")
 
-   
-
 def kevinTomb():
     """
     The room straight ahead with the stranger named Kevin
@@ -252,7 +245,7 @@ def kevinTomb():
     response = ""
     while response not in yes_no: 
         delprint("Mystery man: WELCOME!! Are you Henry the plumber?\n")
-        response = input("(yes / no)\n")
+        response = input("(yes / no)\n").lower()
         if response == "no":
             delprint("Mystery man: Oh. Well, I am....\n")
             delprint(O+"K E V I N!!!!\n")
@@ -280,7 +273,7 @@ def kevinTomb():
         delprint("Kevin: Ahem, yes the riddle.\n")
         delprint("Kevin: It is time for your riddle....again\n")
         delprint("Kevin: What can you serve, but never eat?\n")
-        response = input("1 )A tennis ball | 2) Burgers |3) Soup \n")
+        response = input("1 )A tennis ball | 2) Burgers |3) Soup \n").lower()
         if response == "1":
             delprint("Kevin: What?! How did you know? Most people say soup.\n")
             delprint("Kevin: You may be strange looking but you are smart.\n")
@@ -306,8 +299,6 @@ def kevinTomb():
         else:
             delprint("Kevin: What? Try again.\n")
 
-   
-
 def jonInnOwen():
     response = ""
     delprint(W+"Jon: Ah welcome back young "+name+". Sorry thats ageist of me.\n")
@@ -315,7 +306,7 @@ def jonInnOwen():
     delprint("Jon: Why? Oh eh...you just don't seem too...nevermind.\n")
     while response not in yes_no: 
         delprint("Jon: Lets take a look at your inventory, shall we?\n")
-        response = input("(yes / no)\n")
+        response = input("(yes / no)\n").lower()
         if response == "yes":
             printInventory()
             delprint("Jon: Oh wow! You got Owens key! Well done!\n")
@@ -342,7 +333,7 @@ def jonInnOwenCrossroads():
     delprint("It looks different. Almost reversed?\n")
     while response not in directions: 
         delprint("Which way will you go?\n")
-        response = input("(left / right / forwards)\n")
+        response = input("(left / right / forwards)\n").lower()
         if response == "left":
             delprint("You decide to go left.\n")
             liamTomb()
@@ -362,13 +353,12 @@ def jonInnOwenCrossroads():
         else:
             delprint("Thats not a direction there pal. Try again.\n")
 
-
 def jonInnLiam():
     response = ""
     delprint(W+"Jon: Ah hello again "+name+". You're not dead!\n")
     while response not in yes_no: 
         delprint("Jon: Lets look at that inventory again yes?\n")
-        response = input("(yes / no)\n")
+        response = input("(yes / no)\n").lower()
         if response == "yes":
             printInventory()
             delprint("Jon: Ah wonderful stuff. Two out of 3 now!\n")
@@ -392,7 +382,7 @@ def jonInnLiamCrossroads():
     delprint("It looks different again. The inn is now...upside down?\n")
     while response not in directions: 
         delprint("Which way will you go?\n")
-        response = input("(left / right / forwards)\n")
+        response = input("(left / right / forwards)\n").lower()
         if response == "left":
             delprint("You decide to go left.\n")
             delprint("A man named Pa blocks your path.\n")
@@ -416,7 +406,7 @@ def jonInnKevin():
     delprint("Jon: You've ruined my hat and crushed my vape.\n")
     while response not in yes_no: 
         delprint("Jon: Can I see inside your bag?\n")
-        response = input("(yes / no)\n")
+        response = input("(yes / no)\n").lower()
         if response == "yes":
             printInventory()
             delprint("Jon: My goodness "+name+" you've done it!\n")
@@ -438,7 +428,8 @@ def jonInnKevin():
 def tryAgain():
     response = ""
     while response not in yes_no: 
-        response = input(W+"Try again?\n")
+        delprint(W+"Try again?\n")
+        response = input("(yes / no)\n").lower()
         if response == "yes":
             startGame()
         elif response == "no":
