@@ -1,7 +1,7 @@
 import webbrowser
 import emoji
 import sys,time
-def delprint(text="Type a string in",delay_time=.05): 
+def delprint(text="Type a string in",delay_time=.00): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
@@ -52,7 +52,8 @@ def startGame():
 
     response = ""
     while response not in yes_no: 
-        response = input("Jon: Have you visted here before?\n")
+        delprint("Jon: Have you visted here before?\n")
+        response = input("(yes / no)\n")
         if response == "yes":
             delprint("Jon: Ah excellent! I knew I recognized your ugly mug.\n")
             delprint("Jon: No need for instructions then! Off you pop now.\n")
@@ -79,6 +80,7 @@ def startGame():
 
 def innCrossroads():
     response = ""
+    directions = ["left", "right","forwards"]
     delprint("You are at a crossroads beside the inn.\n")
     while response not in directions: 
         response = input("Which way will you go?\n")
@@ -112,7 +114,8 @@ def owenTomb():
     
     response = ""
     while response not in yes_no: 
-        response = input("Owen: Wait, I know you. Are you "+name+" ?\n")
+        delprint("Owen: Wait, I know you. Are you "+name+" ?\n")
+        response = input("(yes / no)\n")
         if response == "yes":
             delprint("Owen: I have heard much about you. I am Owen eh.\n")
             delprint("He sits down on a chair outside of the melting house.\n")
@@ -177,7 +180,8 @@ def liamTomb():
     
     response = ""
     while response not in yes_no: 
-        response = input("Liam: Do you love Lilt like I? Neeep!\n")
+        delprint("Liam: Do you love Lilt like I? Neeep!\n")
+        response = input("(yes / no)\n")
         if response == "yes":
             delprint("Liam: Excellent. I am Liam the Vagabond. Neeep!\n")
             delprint("He does a small jig that takes several minutes.\n")
@@ -246,7 +250,8 @@ def kevinTomb():
    
     response = ""
     while response not in yes_no: 
-        response = input("Mystery man: WELCOME!! Are you Henry the plumber?\n")
+        delprint("Mystery man: WELCOME!! Are you Henry the plumber?\n")
+        response = input("(yes / no)\n")
         if response == "no":
             delprint("Mystery man: Oh. Well, I am....\n")
             delprint(O+"K E V I N!!!!\n")
@@ -274,7 +279,7 @@ def kevinTomb():
         delprint("Kevin: Ahem, yes the riddle.\n")
         delprint("Kevin: It is time for your riddle....again\n")
         delprint("Kevin: What can you serve, but never eat?\n")
-        response = input("1 )A tennis ball | 2) Looks |3) Soup \n")
+        response = input("1 )A tennis ball | 2) Burgers |3) Soup \n")
         if response == "1":
             delprint("Kevin: What?! How did you know? Most people say soup.\n")
             delprint("Kevin: You may be strange looking but you are smart.\n")
@@ -308,7 +313,8 @@ def jonInnOwen():
     delprint("Jon: It looks like you survived Owen's Tomb. I'm surprised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...nevermind.\n")
     while response not in yes_no: 
-        response = input("Jon: Lets take a look at your inventory, shall we?\n")
+        delprint("Jon: Lets take a look at your inventory, shall we?\n")
+        response = input("(yes / no)\n")
         if response == "yes":
             printInventory()
             delprint("Jon: Oh wow! You got Owens key! Well done!\n")
@@ -359,7 +365,8 @@ def jonInnLiam():
     response = ""
     delprint(W+"Jon: Ah hello again "+name+". You're not dead!\n")
     while response not in yes_no: 
-        response = input("Jon: Have you the second key?\n")
+        delprint("Jon: Lets look at that inventory again yes?\n")
+        response = input("(yes / no)\n")
         if response == "yes":
             printInventory()
             delprint("Jon: Ah wonderful stuff. Two out of 3 now!\n")
@@ -405,7 +412,8 @@ def jonInnKevin():
     delprint(W+"Jon: Good lord "+name+". You nearly killed me.\n")
     delprint("Jon: You've ruined my hat and crushed my vape.\n")
     while response not in yes_no: 
-        response = input("Jon: Did you get Kevins key?\n")
+        delprint("Jon: Can I see inside your bag?\n")
+        response = input("(yes / no)\n")
         if response == "yes":
             printInventory()
             delprint("Jon: My goodness "+name+" you've done it!\n")
@@ -463,7 +471,8 @@ delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
 delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
 delprint("Together, they will open a door at the end of the tomb.\n")
 delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
-name = input("Now, what is your name, traveller?\n")
+delprint("Now, what is your name, traveller?\n")
+name = input("Enter your name \n")
 print("Good luck "+name+"!\n")
 main()
 
