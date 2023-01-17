@@ -35,7 +35,7 @@ def startGame():
     """
     global inventory
     global itemAdd
-    delprint(P+"You stand in front of an old stone passageway.\n")
+    delprint("You stand in front of an old stone passageway.\n")
     delprint("You push on the wall and it slowly slides open. You step inside.\n")
     delprint("It is a huge cave.\n") 
     delprint("However, open fields & trees stretch far into the distance.\n")
@@ -450,7 +450,7 @@ def tryAgain():
 
 def temple_of_pods(): 
     response = ""
-    delprint(B+"Jon: Well, well, well. You did it.\n")
+    delprint("Jon: Well, well, well. You did it.\n")
     delprint("Jon: You have found all 3 keys. Plus lost some weight it seems.\n")
     delprint("Jon: It is now time for you to enter...\n")
     delprint("Jon: THE TEMPLE OF THE.....\n")
