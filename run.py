@@ -83,7 +83,8 @@ def innCrossroads():
     directions = ["left", "right","forwards"]
     delprint("You are at a crossroads beside the inn.\n")
     while response not in directions: 
-        response = input("Which way will you go?\n")
+        delprint("Which way will you go?\n")
+        response = input("(left / right / forwards)\n")
         if response == "right":
             delprint("You decide to go right.\n")
             owenTomb()
@@ -340,7 +341,8 @@ def jonInnOwenCrossroads():
     delprint("You are back at a crossroads beside the inn.\n")
     delprint("It looks different. Almost reversed?\n")
     while response not in directions: 
-        response = input("Which way will you go?\n")
+        delprint("Which way will you go?\n")
+        response = input("(left / right / forwards)\n")
         if response == "left":
             delprint("You decide to go left.\n")
             liamTomb()
@@ -389,7 +391,8 @@ def jonInnLiamCrossroads():
     delprint("You are back at a crossroads beside the inn.\n")
     delprint("It looks different again. The inn is now...upside down?\n")
     while response not in directions: 
-        response = input("Which way will you go?\n")
+        delprint("Which way will you go?\n")
+        response = input("(left / right / forwards)\n")
         if response == "left":
             delprint("You decide to go left.\n")
             delprint("A man named Pa blocks your path.\n")
