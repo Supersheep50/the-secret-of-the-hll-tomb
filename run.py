@@ -17,7 +17,7 @@ O  = '\033[33m' # orange
 B  = '\033[34m' # blue
 P  = '\033[35m' # purple
 
-inventory = ["water bottle", "compass", "weird photos of that guy Jon"]
+inventory = ["WATER BOTTLE", "COMPASS", "WEIRD PHOTOS OF THAT GUY JON"]
 yes_no = ["yes","no"]
 answers = ["1","2","3"]
 
@@ -113,7 +113,7 @@ def owenTomb():
         if response == "2":
             delprint("Owen: Very good "+name+". You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
-            addToInventory("Owens key")
+            addToInventory("OWENS KEY")
             delprint("You hold a key in your hands \U0001F5DD. \n")   
             delprint("You suddenly start to feel warm and fuzzy.\n")
             delprint("You look at your hands as they disappear.\n")
@@ -186,6 +186,8 @@ def liamTomb():
             delprint("You look at him impatiently.\n")
             delprint("Liam: Oh fine. Take this too.\n")
             delprint("It is a key in the shape of an L  \U0001F5DD.\n")
+            addToInventory("LIAMS KEY")
+            addToInventory("MORE WEIRD PHOTOS OF JON")
             delprint("All of a sudden a huge bird grabs you by the shoulders \n")
             delprint("You are carried off and see the inn in the distance.\n")
             delprint("The bird drops you with a thud.\n")
@@ -260,6 +262,8 @@ def kevinTomb():
             delprint("He lifts up his wig and pulls out a key \U0001F5DD. \n")
             delprint("Kevin: You've earned this I suppose.\n")
             delprint("Kevin: Even though my toilet is still clogged.\n")
+            delprint("You hold the third and final key in your hands.\n")
+            addToInventory("KEVINS KEY")
             delprint("You fall through another trapdoor.\n")
             delprint("You feel like you're falling upwards.\n")
             delprint("You land with a oof directly on Jon.\n")
@@ -290,11 +294,11 @@ def jonInnOwen():
             printInventory()
             delprint("Jon: Oh wow! You got Owens key! Well done!\n")
             delprint("Jon: You're certainly on your way now traveller.\n")
-            delprint("Jon: We should definitely celebrate..wait a minute...\n")
+            delprint("Jon: We should definitely celebrate....wait a minute...\n")
             delprint("He stares confused at the photo album you have of him.\n")
             delprint("You have absolutely no idea how it got in your bag.\n")
             delprint("Jon: WHERE ON EARTH DID THESE COME FROM?! \n")
-            delprint("He looks embarassed and begins to turn red. As do you \n")
+            delprint("He looks embarassed and begins to turn red. As do you.\n")
         elif response == "no":
             delprint("Jon: Ooooh someones hiding something aren't they?\n")
             delprint("Jon: Nevermind! I shall respect your privacy. \n")
@@ -310,10 +314,17 @@ def jonInnOwen():
 def jonInnLiam():
     response = ""
     delprint(W+"Jon: Ah hello again "+name+". You're not dead!\n")
-    delprint("Jon: Is that Liam's key? Impressive.\n")
-    delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
-    delprint("Jon: Anyway, you must continue on your journey.\n")
-    kevinTomb()
+    while response not in yes_no: 
+        response = input("Jon: Have you the second key?\n")
+        if response == "yes":
+            printInventory()
+            delprint("Jon: Ah wonderful stuff. Two out of 3 now!\n")
+            delprint("Jon: Oh. You still have those photos and....MORE?\n")
+            delprint("Jon: You are quite an odd person "+name+".\n")
+            delprint("Jon: Anyway. You met Liam the Vagabond.\n")
+            delprint("Jon: He's an interesting chap that Liam. Loves a diet Coke. \n")
+            delprint("Jon: Anyway, you must continue on your journey.\n")
+            kevinTomb()
     
 
 
