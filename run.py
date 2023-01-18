@@ -20,6 +20,8 @@ P  = '\033[35m' # purple
 directions = ["left", "right","forwards"]
 inventory = ["WATER BOTTLE", "COMPASS", "WEIRD PHOTOS OF THAT GUY JON"]
 yes_no = ["yes","no"]
+use_dont_use = ["use", "dont use"]
+final_question = ["Continue", "Salvation"]
 answers = ["1","2","3"]
 
 def addToInventory(item):
@@ -465,13 +467,91 @@ def temple_of_pods():
     delprint("Jon: Yes they're here now.\n")
     delprint("Jon: NO I AM NOT DOING THE SMOKE & MUSIC THING \n")
     delprint("Jon glances at you sheepishly and puts away the phone \n")
-    delprint("Jon: Right. Time for you to go then. Good luck! \n")
+    delprint("Jon: It is time "+name+"\n")
+    while response not in yes_no: 
+        delprint("Are you ready?\n")
+        response = input("(yes / no)\n").lower()
+        if response == "yes":
+            delprint("Before your very eyes the inn begins to transform.\n")
+            delprint("A large grey castle in the shape of HLL appears. \n")
+            delprint("You walk forward gripping the straps of your bag tight \n")
+            delprint("In front of the door, stands a woman in armour.\n")
+            stephGuard()
+        elif response == "no":
+            delprint("Jon: Pfft. Suit yourself so. \n")
+            tryAgain()
+        else:
+            delprint("Jon: Well that makes no sense.\n")
+
+
+
+def stephGuard():
+    delprint("She moves her sword to block the door as you walk up.\n")
+    delprint(P+"Steph: I am Stephanie. The Protector of the Pods.\n")
+    delprint("You remember this is the woman who blocked Kevin's toilet.\n")
+    delprint("Steph: To enter, you must have the 3 keys in your posession.\n")
+    delprint("Steph: Otherwise your adventure is over.\n")
+    delprint("Steph: Do you have the 3 keys? (yes / no)\n")
+    check=input()
+    if check == "yes":
+        printInventory()
+        delprint("Stephanie steps aside.\n")
+        delprint("You see space for 3 keys in the door.\n")
+        finalScene()
+    elif response == "no":
+        delprint("Steph: Your journey ends here.\n")
+        tryAgain()
     
-def main(): 
+
+def finalScene():
+    response = ""
+    while response not in use_dont_use: 
+        delprint("Use keys?\n")
+        response = input("(use / dont use)\n").lower()
+        if response == "use":
+            delprint("The door slowly rumbles open and shows a grand hall.\n")
+            delprint("At the altar, 3 large paintings hang on the wall.\n")
+            delprint("Each painting depicts 1 of the 3 strangers.\n")
+            delprint("Suddenly ghostly apparitions emerge from each painting \n")
+        elif response == "dont use":
+            delprint("Stephanie scoffs at you.\n")
+            delprint("Steph: Your jounrey ends here.\n")
+            tryAgain()
+        else:
+            delprint("Steph: Choose again.\n")
+    
+
+    delprint(G+"Liam: It is time for your final choice "+name+".\n")
+    delprint(R+"Owen: You must choose between a further test of your might...\n")
+    delprint(O+"Kevin: ...or salavation at last.\n")
+    delprint(W+"Jon appears from behind a pillar. Steph runs off behind him.\n")
+    
+    answer = ""
+    while answer not in final_question:
+        delprint("Jon: So what will it be "+name+"?\n")
+        answer = input("(continue / salvation)\n").lower()
+        if answer == "continue":
+            delprint("Jon: Good luck on your travels "+name+"\n")
+            delprint("Jon: Goodbye.\n")
+            webbrowser.open('https://supersheep50.github.io/hey-look-listen-quiz/')
+        elif answer == "salvation":
+            delprint("Jon: You have earned this rest "+name+"\n")
+            delprint("Jon: Your ears and heart will thank you.\n")
+            webbrowser.open('https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7')
+        else:
+            delprint("Jon: Try typing better. Sigh.\n")
+
+
+   
+
+
+
+
+
     """
     Run all program functions
     """
-    startGame()
+    
    
 
 delprint("Welcome to The Secret of the HLL Tomb!\n")
@@ -482,7 +562,7 @@ delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
 delprint("Now, what is your name, traveller?\n")
 name = input("Enter your name \n")
 print("Good luck "+name+"!\n")
-main()
+startGame()
 
 
 
