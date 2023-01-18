@@ -1,3 +1,36 @@
+import gspread
+from google.oauth2.service_account import Credentials
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('the-secret-of-the-hll-tomb')
+
+
+def get_visitor_data():
+    """
+    Data input
+    """
+    visitor_str = input("Enter your name here:")
+    visitor_data = visitor_str.lower()
+    print(f"You entered {visitor_str}")
+
+    return visitor_data
+
+def update_logbook(data):
+    delprint("Updating logbook.\n")
+    logbook_worksheet = SHEET.worksheet("logbook")
+    logbook_worksheet.append_row(str(data))
+    delprint("Update successful")
+
+
+
 import webbrowser
 import emoji
 import sys,time
@@ -553,7 +586,8 @@ def finalScene():
     """
     
    
-
+visitor_data = get_visitor_data()
+update_logbook(visitor_data)
 delprint("Welcome to The Secret of the HLL Tomb!\n")
 delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
 delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
@@ -562,6 +596,7 @@ delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
 delprint("Now, what is your name, traveller?\n")
 name = input("Enter your name \n")
 print("Good luck "+name+"!\n")
+
 startGame()
 
 
