@@ -578,8 +578,8 @@ def finalScene():
             delprint("Jon: Try typing better. Sigh.\n")
     
 
-def menu():
-    print(f"""
+
+print(f"""
        _                                                            ___          _              _     _ _                      _     
    _  | |                                            _             / __)     _  | |            | |   | | |      _             | |    
  _| |_| |__  _____     ___ _____  ____  ____ _____ _| |_     ___ _| |__    _| |_| |__  _____   | |__ | | |    _| |_ ___  ____ | |__  
@@ -588,19 +588,15 @@ def menu():
    \__)_| |_|_____)  (___/|_____)\____)_|   |_____)  \__)   \___/ |_|        \__)_| |_|_____)  |_| |_|\_)_)     \__)___/|_|_|_|____/ 
                                                                                                                                      
 """)
-    delprint("Welcome to The Secret of the HLL Tomb!\n")
-    delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
-    delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
-    delprint("Together, they will open a door at the end of the tomb.\n")
-    delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
-    delprint("Now, what is your name, traveller?\n")
-    name = input("Enter your name \n")
-    print("Good luck "+name+"!\n")
+delprint("Welcome to The Secret of the HLL Tomb!\n")
+delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
+delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
+delprint("Together, they will open a door at the end of the tomb.\n")
+delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
+delprint("Now, what is your name, traveller?\n")
+name = input("Enter your name \n")
+print("Good luck "+name+"!\n")
 
-
-
-
-menu()
 startGame()
 visitor_data = get_visitor_data()
 update_logbook(visitor_data)
