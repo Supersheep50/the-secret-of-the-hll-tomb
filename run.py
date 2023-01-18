@@ -1,5 +1,13 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import webbrowser
+import emoji
+import sys,time
+def delprint(text="Type a string in",delay_time=.00): 
+  for character in text:      
+    sys.stdout.write(character) 
+    sys.stdout.flush()
+    time.sleep(delay_time)
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -12,33 +20,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('the-secret-of-the-hll-tomb')
 
-
-def get_visitor_data():
-    """
-    Data input
-    """
-    visitor_str = input("Enter your name here:")
-    visitor_data = visitor_str.lower()
-    print(f"You entered {visitor_str}")
-
-    return visitor_data
-
-def update_logbook(data):
-    delprint("Updating logbook.\n")
-    logbook_worksheet = SHEET.worksheet("logbook")
-    logbook_worksheet.append_row(str(data))
-    delprint("Update successful")
-
-
-
-import webbrowser
-import emoji
-import sys,time
-def delprint(text="Type a string in",delay_time=.00): 
-  for character in text:      
-    sys.stdout.write(character) 
-    sys.stdout.flush()
-    time.sleep(delay_time)
 
 """
 Color definitions - credit to StackoverFlow.
@@ -447,6 +428,7 @@ def jonInnKevin():
             delprint("Jon: My goodness "+name+" you've done it!\n")
             delprint("Jon: I underestimated you\n")
             delprint("Jon: I really wish you'd get rid of those photos though\n")
+            get_visitor_data()
         elif response == "no":
             delprint("Jon: FINE. I dont even want to look. \n")
             delprint("Jon: I bet its just full of weird photos anyway.\n")
@@ -454,9 +436,23 @@ def jonInnKevin():
         else:
             delprint("Jon: What? I SAID DO YOU WANT TO CHECK YOUR INVENTORY?\n")
 
+
+def get_visitor_data():
+    """
+    Data input
+    """
     delprint("Jon: Hows his toilet by the way? \n")
     delprint("Jon: How do I know about it?...nevermind.\n")
     delprint("Jon: Enough about bowel movements.\n")
+    delprint("Jon: Before you go on ahead. You must do one thing.\n")
+    delprint("He takes out a dusty old book and blows the dust off.\n")
+    delprint("Jon: This is our visitor logbook...its quite empty.\n")
+    delprint("Jon: Because of all the death and that....\n")
+    delprint("Jon: But please, sign your name and go down in history.\n")
+    visitor_str = input("Sign your name here:")
+    visitor_data = visitor_str.lower()
+    print(f"You entered {visitor_str}\n")
+    return visitor_data
     delprint("Jon: Are you ready to go to the Temple of the Pods?\n")
     response = ""
     while response not in yes_no: 
@@ -473,7 +469,14 @@ def jonInnKevin():
         else: 
             delprint("Jon: THE TEMPLE OF THE PODS. ARE YOU DEAF?\n")
     
-   
+def update_logbook(data):
+    delprint("Updating logbook.\n")
+    logbook_worksheet = SHEET.worksheet("logbook")
+    logbook_worksheet.append_row([str(data)])
+    delprint("Update successful")
+
+
+
 def tryAgain():
     response = ""
     while response not in yes_no: 
@@ -573,31 +576,35 @@ def finalScene():
             webbrowser.open('https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7')
         else:
             delprint("Jon: Try typing better. Sigh.\n")
-
-
-   
-
-
-
-
-
-    """
-    Run all program functions
-    """
     
-   
+
+def menu():
+    print(f"""
+       _                                                            ___          _              _     _ _                      _     
+   _  | |                                            _             / __)     _  | |            | |   | | |      _             | |    
+ _| |_| |__  _____     ___ _____  ____  ____ _____ _| |_     ___ _| |__    _| |_| |__  _____   | |__ | | |    _| |_ ___  ____ | |__  
+(_   _)  _ \| ___ |   /___) ___ |/ ___)/ ___) ___ (_   _)   / _ (_   __)  (_   _)  _ \| ___ |  |  _ \| | |   (_   _) _ \|    \|  _ \ 
+  | |_| | | | ____|  |___ | ____( (___| |   | ____| | |_   | |_| || |       | |_| | | | ____|  | | | | | |     | || |_| | | | | |_) )
+   \__)_| |_|_____)  (___/|_____)\____)_|   |_____)  \__)   \___/ |_|        \__)_| |_|_____)  |_| |_|\_)_)     \__)___/|_|_|_|____/ 
+                                                                                                                                     
+""")
+    delprint("Welcome to The Secret of the HLL Tomb!\n")
+    delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
+    delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
+    delprint("Together, they will open a door at the end of the tomb.\n")
+    delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
+    delprint("Now, what is your name, traveller?\n")
+    name = input("Enter your name \n")
+    print("Good luck "+name+"!\n")
+
+
+
+
+menu()
+startGame()
 visitor_data = get_visitor_data()
 update_logbook(visitor_data)
-delprint("Welcome to The Secret of the HLL Tomb!\n")
-delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
-delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
-delprint("Together, they will open a door at the end of the tomb.\n")
-delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
-delprint("Now, what is your name, traveller?\n")
-name = input("Enter your name \n")
-print("Good luck "+name+"!\n")
 
-startGame()
 
 
 
