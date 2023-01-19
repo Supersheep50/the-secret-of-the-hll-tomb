@@ -361,7 +361,7 @@ def jonInnOwenCrossroads():
             delprint("You turn around.\n")
             jonInnOwenCrossroads()
         elif response == "forwards":
-            delprint("You deicde to go forward.\n")
+            delprint("You decide to go forward.\n")
             delprint("Jon is crying again but this time behind a rock.\n")
             delprint("He seems to be holding a photo of Owen.\n")
             delprint("You turn around.\n")
@@ -570,34 +570,23 @@ def finalScene():
     
 
 
-print(B+f"""
+delprint(B+f"""
  
- _   _                                   _   
-| | | |                                 | |  
-| |_| |__   ___   ___  ___  ___ _ __ ___| |_ 
-| __| '_ \ / _ \ / __|/ _ \/ __| '__/ _ \ __|
-| |_| | | |  __/ \__ \  __/ (__| | |  __/ |_ 
- \__|_| |_|\___| |___/\___|\___|_|  \___|\__|
-                                             
-                                             
-        __   _   _                           
-       / _| | | | |                          
-  ___ | |_  | |_| |__   ___                  
- / _ \|  _| | __| '_ \ / _ \                 
-| (_) | |   | |_| | | |  __/                 
- \___/|_|    \__|_| |_|\___|                 
-                                             
-                                             
- _     _ _   _                  _            
-| |   | | | | |                | |           
-| |__ | | | | |_ ___  _ __ ___ | |__         
-| '_ \| | | | __/ _ \| '_ ` _ \| '_ \        
-| | | | | | | || (_) | | | | | | |_) |       
-|_| |_|_|_|  \__\___/|_| |_| |_|_.__/        
-                                             
-                                             
 
-                                                                                                                                     
+ _   _                                   _            __   _   _           
+| | | |                                 | |          / _| | | | |          
+| |_| |__   ___   ___  ___  ___ _ __ ___| |_    ___ | |_  | |_| |__   ___  
+| __| '_ \ / _ \ / __|/ _ \/ __| '__/ _ \ __|  / _ \|  _| | __| '_ \ / _ \ 
+| |_| | | |  __/ \__ \  __/ (__| | |  __/ |_  | (_) | |   | |_| | | |  __/ 
+ \__|_|_|_|\___| |___/\___|\___|_|  \___|\__|  \___/|_|    \__|_| |_|\___| 
+| |   | | | | |                | |                                         
+| |__ | | | | |_ ___  _ __ ___ | |__                                       
+| '_ \| | | | __/ _ \| '_ ` _ \| '_ \                                      
+| | | | | | | || (_) | | | | | | |_) |                                     
+|_| |_|_|_|  \__\___/|_| |_| |_|_.__/                                      
+                                                                           
+                                                                           
+                                                                                                                               
 """)
 delprint(W+"Welcome to The Secret of the HLL Tomb!\n")
 delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
