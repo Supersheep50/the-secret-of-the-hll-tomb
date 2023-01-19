@@ -3,7 +3,7 @@ from google.oauth2.service_account import Credentials
 import webbrowser
 import emoji
 import sys,time
-def delprint(text="Type a string in",delay_time=.00): 
+def delprint(text="Type a string in",delay_time=.05): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
