@@ -1,21 +1,25 @@
+#imports
 import gspread
 from google.oauth2.service_account import Credentials
 import webbrowser
 import emoji
 import sys,time
-def delprint(text="Type a string in",delay_time=.05): 
+
+# Code to print slower than default (Credit in Readme)
+def delprint(text="Type a string in",delay_time=.00): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
     time.sleep(delay_time)
 
+# Google apis
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
     ]
 
-# creds and google sheet apis
+# creds & gspread
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
@@ -58,6 +62,7 @@ def startGame():
     """
     global inventory
     global itemAdd
+    
     delprint("You stand in front of an old stone passageway.\n")
     delprint("You push on the wall and it slowly slides open. You step inside.\n")
     delprint("It is a huge cave.\n") 
@@ -356,7 +361,7 @@ def jonInnOwen():
     jonInnOwenCrossroads()
 
 # Function for leaving the inn and heading to the next tomb after visitng Owens tomb.
-def jonInnOwenCrossroads():
+def jonInnOwenCrossroads(): 
     response = ""
     delprint("You are back at a crossroads beside the inn.\n")
     delprint("It looks different. Almost reversed?\n")
@@ -574,11 +579,13 @@ def finalScene():
             delprint("Jon: Goodbye.\n")
             delprint("THE END. CONGRATUALTIONS!")
             webbrowser.open('https://supersheep50.github.io/hey-look-listen-quiz/')
+            exit()
         elif answer == "salvation":
             delprint("Jon: You have earned this rest "+name+"\n")
             delprint("Jon: Your ears and heart will thank you.\n")
             delprint("THE END. CONGRATUALTIONS!\n")
             webbrowser.open('https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7')
+            exit()
         else:
             delprint("Jon: Try typing better. Sigh.\n")
     
@@ -597,6 +604,28 @@ print(O+f"""
 | | | | | | | || (_) | | | | | | |_) |                                     
 |_| |_|_|_|  \__\___/|_| |_| |_|_.__/                                                                                                                                                                    
 """)
+
+# Main menu for game.
+def mainMenu():
+    response = "" 
+    while response not in answers: 
+        response = input("1 ) Start New Game | 2) Instructions |3) Podcast \n").lower()
+        if response == "1":
+            startGame()   
+        elif response == "2":
+            print("The Secret of the HLL Tomb is a text based adventure game.\n")
+            print("This game can only be played on PC or Laptop.\n")
+            print("You will be required to input answers throughout the game.\n")
+            print("You can answer these questions via your computer keyboard.\n")
+            print("The game takes about 15 minutes to complete.\n")   
+            print("And also has several different paths to its ending.\n")
+            mainMenu()
+        elif response == "3":
+            print("Link to podcast.\n")
+        else:
+            print("Not a valid option. Choose again.\n")
+
+
 delprint(W+"Welcome to The Secret of the HLL Tomb!\n")
 delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
 delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
@@ -606,8 +635,7 @@ delprint("Now, what is your name, traveller?\n")
 name = input("Enter your name \n")
 print("Good luck "+name+"!\n")
 
-# Start of game.
-startGame()
+mainMenu()
 
 
 
