@@ -34,6 +34,7 @@ G  = '\033[32m' # green
 O  = '\033[33m' # orange
 B  = '\033[34m' # blue
 P  = '\033[35m' # purple
+C  = '\033[96m' #cyan
 
 
 # User input controls & inventory
@@ -231,7 +232,7 @@ def liamTomb():
     while response not in answers: 
         delprint("Liam: I DO NOT BELIEVE YOU!! NEEEEEP!\n")
         delprint("Liam: Do you luv Lilt?? \n")
-        response = input("1 )I LOVE LILT | 2) LILT IS THE BEST |3) I LUV LILT \n").lower()
+        response = input("1 )I LOVE COKE | 2) I LOVE MILK |3) I LOVE LILT \n").lower()
         if response == "3":
             delprint("Liam: Hmmm FINE. I believe you. Take this.\n")
             delprint("He hands you an empty can of the beverage known as Lilt.\n")
@@ -531,7 +532,7 @@ def temple_of_pods():
 # Function for meeting the guard outside the Temple of the Pods.
 def stephGuard():
     delprint("She moves her sword to block the door as you walk up.\n")
-    delprint(P+"Steph: I am Stephanie. The Protector of the Pods.\n")
+    delprint(C+"Steph: I am Stephanie. The Protector of the Pods.\n")
     delprint("You remember this is the woman who blocked Kevin's toilet.\n")
     delprint("Steph: To enter, you must have the 3 keys in your posession.\n")
     delprint("Steph: Otherwise your adventure is over.\n")
@@ -577,21 +578,27 @@ def finalScene():
         if answer == "continue":
             delprint("Jon: Good luck on your travels "+name+"\n")
             delprint("Jon: Goodbye.\n")
+            delprint("On the floor in front of you appears a url.\n")
+            delprint("https://supersheep50.github.io/hey-look-listen-quiz/ \n")
+            delprint("Copy & paste the link to enjoy more HLL fun.\n")
             delprint("THE END. CONGRATUALTIONS!")
-            webbrowser.open('https://supersheep50.github.io/hey-look-listen-quiz/')
+           
             exit()
         elif answer == "salvation":
             delprint("Jon: You have earned this rest "+name+"\n")
             delprint("Jon: Your ears and heart will thank you.\n")
-            delprint("THE END. CONGRATUALTIONS!\n")
-            webbrowser.open('https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7')
-            exit()
+            delprint("Jon: Good luck on your travels "+name+"\n")
+            delprint("Jon: Goodbye.\n")
+            delprint("On the floor in front of you appears a url.\n")
+            delprint("https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7 \n")
+            delprint("Copy & paste the link to enjoy more HLL fun.\n")
+            delprint("THE END. CONGRATUALTIONS!")
         else:
             delprint("Jon: Try typing better. Sigh.\n")
     
 
 # Opening game header and intro.
-print(O+f"""
+print(C+f"""
   _   _                                   _            __   _   _           
 | | | |                                 | |          / _| | | | |          
 | |_| |__   ___   ___  ___  ___ _ __ ___| |_    ___ | |_  | |_| |__   ___  
@@ -619,6 +626,8 @@ def mainMenu():
             print("You can answer these questions via your computer keyboard.\n")
             print("The game takes about 15 minutes to complete.\n")   
             print("And also has several different paths to its ending.\n")
+            print("Getting a riddle Q wrong is Game Over!\n")
+            print("But dont fret you can Try Again!\n")
             mainMenu()
         elif response == "3":
             print("Link to podcast.\n")
