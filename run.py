@@ -15,15 +15,15 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
+# creds and google sheet apis
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('the-secret-of-the-hll-tomb')
 
 
-"""
-Color definitions - credit to StackoverFlow.
-"""
+
+# Color definitions - credit to StackoverFlow in Readme.
 W  = '\033[0m'  # white (normal)
 R  = '\033[31m' # red
 G  = '\033[32m' # green
@@ -31,6 +31,8 @@ O  = '\033[33m' # orange
 B  = '\033[34m' # blue
 P  = '\033[35m' # purple
 
+
+# User input controls & inventory
 directions = ["left", "right","forwards"]
 inventory = ["WATER BOTTLE", "COMPASS", "WEIRD PHOTOS OF THAT GUY JON"]
 yes_no = ["yes","no"]
@@ -38,13 +40,18 @@ use_dont_use = ["use", "dont use"]
 final_question = ["Continue", "Salvation"]
 answers = ["1","2","3"]
 
+
+# Add inventory function
 def addToInventory(item):
     inventory.append(item)
 
+# Show items in inventory to the user
 def printInventory():
     for i in inventory:
         print(i)
 
+
+# Function to start game after entering your name
 def startGame():
     """
     Starts game and intoduces user to the game
@@ -93,6 +100,7 @@ def startGame():
             delprint("Jon: Sorry, I didn't understand that.\n")
     innCrossroads()
 
+# Crossroads function where user meert guide to go different directions.
 def innCrossroads():
     response = ""
     directions = ["left", "right","forwards"]
@@ -117,6 +125,7 @@ def innCrossroads():
         else:
             delprint("Thats not a direction there pal. Try again.\n")
 
+# The first tomb with the character Owen.
 def owenTomb():
     """
     The room to the left with the stranger named Owen
@@ -175,6 +184,7 @@ def owenTomb():
         else:
             delprint("Owen: Not quite. Try again.\n")
 
+# The second tomb with the character Liam.
 def liamTomb():
     """
     The room to the right with the stranger named Liam
@@ -242,6 +252,7 @@ def liamTomb():
         else:
             delprint("Liam: WHAT?!. Neep. Try again.\n")
 
+# The third tomb with character Kevin.
 def kevinTomb():
     """
     The room straight ahead with the stranger named Kevin
@@ -315,6 +326,7 @@ def kevinTomb():
         else:
             delprint("Kevin: What? Try again.\n")
 
+# Function for heading to the inn after leaving Owens tomb.
 def jonInnOwen():
     response = ""
     delprint(W+"Jon: Ah welcome back young "+name+". Sorry thats ageist of me.\n")
@@ -343,6 +355,7 @@ def jonInnOwen():
     delprint("Jon: You're really in for a treat.\n")
     jonInnOwenCrossroads()
 
+# Function for leaving the inn and heading to the next tomb after visitng Owens tomb.
 def jonInnOwenCrossroads():
     response = ""
     delprint("You are back at a crossroads beside the inn.\n")
@@ -369,6 +382,7 @@ def jonInnOwenCrossroads():
         else:
             delprint("Thats not a direction there pal. Try again.\n")
 
+# Function for heading to the inn after leaving Liams tomb.
 def jonInnLiam():
     response = ""
     delprint(W+"Jon: Ah hello again "+name+". You're not dead!\n")
@@ -392,6 +406,7 @@ def jonInnLiam():
     delprint("Jon: Anyway, you must continue on your journey.\n")
     jonInnLiamCrossroads()
     
+# Function for leaving the innn and heading to the next tomb after visiting Liams tomb.    
 def jonInnLiamCrossroads():
     response = ""
     delprint("You are back at a crossroads beside the inn.\n")
@@ -416,6 +431,7 @@ def jonInnLiamCrossroads():
         else:
             delprint("Thats not a direction there pal. Try again.\n")
 
+# Function for heading to the inn after leaving Kevins tomb.
 def jonInnKevin():
     response = ""
     delprint(W+"Jon: Good lord "+name+". You nearly killed me.\n")
@@ -438,7 +454,7 @@ def jonInnKevin():
         else:
             delprint("Jon: What? I SAID DO YOU WANT TO CHECK YOUR INVENTORY?\n")
 
-
+# Function to grab a user singatuve for the logbook.
 def get_visitor_data():
     """
     Data input
@@ -457,15 +473,14 @@ def get_visitor_data():
     update_logbook(visitor_data)
     temple_of_pods()
     
+# Updates the logbook.    
 def update_logbook(data):
     delprint("Updating logbook.\n")
     logbook_worksheet = SHEET.worksheet("logbook")
     logbook_worksheet.append_row([str(data)])
     delprint("Update successful. \n")
 
-
-
-
+# Try again function after getting a question wrong.
 def tryAgain():
     response = ""
     while response not in yes_no: 
@@ -478,7 +493,7 @@ def tryAgain():
         else:
             delprint("That is not a valid option")
 
-
+# Function to begin the final third of the game after each tomb is completed.
 def temple_of_pods(): 
     response = ""
     delprint("Jon: Well, well, well. You did it.\n")
@@ -508,8 +523,7 @@ def temple_of_pods():
         else:
             delprint("Jon: Well that makes no sense.\n")
 
-
-
+# Function for meeting the guard outside the Temple of the Pods.
 def stephGuard():
     delprint("She moves her sword to block the door as you walk up.\n")
     delprint(P+"Steph: I am Stephanie. The Protector of the Pods.\n")
@@ -527,7 +541,7 @@ def stephGuard():
         delprint("Steph: Your journey ends here.\n")
         tryAgain()
     
-
+# Final scene of the game.
 def finalScene():
     response = ""
     while response not in use_dont_use: 
@@ -569,8 +583,8 @@ def finalScene():
             delprint("Jon: Try typing better. Sigh.\n")
     
 
-
-print(B+f"""
+# Opening game header and intro.
+print(O+f"""
   _   _                                   _            __   _   _           
 | | | |                                 | |          / _| | | | |          
 | |_| |__   ___   ___  ___  ___ _ __ ___| |_    ___ | |_  | |_| |__   ___  
@@ -592,6 +606,7 @@ delprint("Now, what is your name, traveller?\n")
 name = input("Enter your name \n")
 print("Good luck "+name+"!\n")
 
+# Start of game.
 startGame()
 
 
