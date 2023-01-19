@@ -4,6 +4,7 @@ from google.oauth2.service_account import Credentials
 import webbrowser
 import emoji
 import sys,time
+import os
 
 # Code to print slower than default (Credit in Readme)
 def delprint(text="Type a string in",delay_time=.00): 
@@ -493,9 +494,11 @@ def tryAgain():
         delprint(W+"Try again?\n")
         response = input("(yes / no)\n").lower()
         if response == "yes":
-            startGame()
+            os.system('clear')
+            mainMenu()
         elif response == "no":
-            exit()
+            os.system('clear')
+            mainMenu()
         else:
             delprint("That is not a valid option")
 
@@ -581,9 +584,8 @@ def finalScene():
             delprint("On the floor in front of you appears a url.\n")
             delprint("https://supersheep50.github.io/hey-look-listen-quiz/ \n")
             delprint("Copy & paste the link to enjoy more HLL fun.\n")
-            delprint("THE END. CONGRATUALTIONS!")
-           
-            exit()
+            delprint("THE END. CONGRATULATIONS!")
+            tryAgain()
         elif answer == "salvation":
             delprint("Jon: You have earned this rest "+name+"\n")
             delprint("Jon: Your ears and heart will thank you.\n")
@@ -592,7 +594,8 @@ def finalScene():
             delprint("On the floor in front of you appears a url.\n")
             delprint("https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7 \n")
             delprint("Copy & paste the link to enjoy more HLL fun.\n")
-            delprint("THE END. CONGRATUALTIONS!")
+            delprint("THE END. CONGRATULATIONS!")
+            tryAgain()
         else:
             delprint("Jon: Try typing better. Sigh.\n")
     
@@ -614,6 +617,19 @@ print(C+f"""
 
 # Main menu for game.
 def mainMenu():
+    print(C+f"""
+  _   _                                   _            __   _   _           
+| | | |                                 | |          / _| | | | |          
+| |_| |__   ___   ___  ___  ___ _ __ ___| |_    ___ | |_  | |_| |__   ___  
+| __| '_ \ / _ \ / __|/ _ \/ __| '__/ _ \ __|  / _ \|  _| | __| '_ \ / _ \ 
+| |_| | | |  __/ \__ \  __/ (__| | |  __/ |_  | (_) | |   | |_| | | |  __/ 
+ \__|_|_|_|\___| |___/\___|\___|_|  \___|\__|  \___/|_|    \__|_| |_|\___| 
+| |   | | | | |                | |                                         
+| |__ | | | | |_ ___  _ __ ___ | |__                                       
+| '_ \| | | | __/ _ \| '_ ` _ \| '_ \                                      
+| | | | | | | || (_) | | | | | | |_) |                                     
+|_| |_|_|_|  \__\___/|_| |_| |_|_.__/                                                                                                                                                                    
+""")
     response = "" 
     while response not in answers: 
         response = input("1 ) Start New Game | 2) Instructions |3) Podcast \n").lower()
@@ -626,7 +642,7 @@ def mainMenu():
             print("You can answer these questions via your computer keyboard.\n")
             print("The game takes about 15 minutes to complete.\n")   
             print("And also has several different paths to its ending.\n")
-            print("Getting a riddle Q wrong is Game Over!\n")
+            print("Getting a riddle question wrong is Game Over!\n")
             print("But dont fret you can Try Again!\n")
             mainMenu()
         elif response == "3":
@@ -640,6 +656,7 @@ delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
 delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
 delprint("Together, they will open a door at the end of the tomb.\n")
 delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
+delprint("Make sure to check out the instructions before you play!\n")
 delprint("Now, what is your name, traveller?\n")
 name = input("Enter your name \n")
 print("Good luck "+name+"!\n")
