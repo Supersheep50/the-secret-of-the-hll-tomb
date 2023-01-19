@@ -3,7 +3,7 @@ from google.oauth2.service_account import Credentials
 import webbrowser
 import emoji
 import sys,time
-def delprint(text="Type a string in",delay_time=.05): 
+def delprint(text="Type a string in",delay_time=.00): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
@@ -433,6 +433,8 @@ def jonInnKevin():
             delprint("Jon: FINE. I dont even want to look. \n")
             delprint("Jon: I bet its just full of weird photos anyway.\n")
             delprint("He storms into the inn and shuts the door behind him.\n")
+            delprint("After a couple minutes of sulking he comes back out.\n")
+            get_visitor_data()
         else:
             delprint("Jon: What? I SAID DO YOU WANT TO CHECK YOUR INVENTORY?\n")
 
@@ -452,28 +454,15 @@ def get_visitor_data():
     visitor_str = input("Sign your name here:")
     visitor_data = visitor_str.lower()
     print(f"You entered {visitor_str}\n")
-    return visitor_data
-    delprint("Jon: Are you ready to go to the Temple of the Pods?\n")
-    response = ""
-    while response not in yes_no: 
-        response = input("(yes / no / what?)\n").lower()
-        if response == "yes":
-            temple_of_pods()
-        elif response == "no":
-            delprint("Jon: Well tough luck you ain't staying with me.\n")
-            delprint("He starts to walk on ahead. You follow.\n")
-            temple_of_pods()
-        elif response == "what?":
-            delprint("Jon takes a big breath and readies his smoke machine.\n")
-            delprint("He thinks better of it and stops.")
-        else: 
-            delprint("Jon: THE TEMPLE OF THE PODS. ARE YOU DEAF?\n")
+    update_logbook(visitor_data)
+    temple_of_pods()
     
 def update_logbook(data):
     delprint("Updating logbook.\n")
     logbook_worksheet = SHEET.worksheet("logbook")
     logbook_worksheet.append_row([str(data)])
-    delprint("Update successful")
+    delprint("Update successful. \n")
+
 
 
 
@@ -569,10 +558,12 @@ def finalScene():
         if answer == "continue":
             delprint("Jon: Good luck on your travels "+name+"\n")
             delprint("Jon: Goodbye.\n")
+            delprint("THE END. CONGRATUALTIONS!")
             webbrowser.open('https://supersheep50.github.io/hey-look-listen-quiz/')
         elif answer == "salvation":
             delprint("Jon: You have earned this rest "+name+"\n")
             delprint("Jon: Your ears and heart will thank you.\n")
+            delprint("THE END. CONGRATUALTIONS!\n")
             webbrowser.open('https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7')
         else:
             delprint("Jon: Try typing better. Sigh.\n")
@@ -618,8 +609,8 @@ name = input("Enter your name \n")
 print("Good luck "+name+"!\n")
 
 startGame()
-visitor_data = get_visitor_data()
-update_logbook(visitor_data)
+
+
 
 
 
