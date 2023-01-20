@@ -7,7 +7,7 @@ import sys,time
 import os
 
 # Code to print slower than default (Credit in Readme)
-def delprint(text="Type a string in",delay_time=.00): 
+def delprint(text="Type a string in",delay_time=.03): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
@@ -65,7 +65,7 @@ def startGame():
     global inventory
     global itemAdd
     
-    delprint("You stand in front of an old stone passageway.\n")
+    delprint(W+"You stand in front of an old stone passageway.\n")
     delprint("You push on the wall and it slowly slides open. You step inside.\n")
     delprint("It is a huge cave.\n") 
     delprint("However, open fields & trees stretch far into the distance.\n")
@@ -617,19 +617,6 @@ print(C+f"""
 
 # Main menu for game.
 def mainMenu():
-    print(C+f"""
-  _   _                                   _            __   _   _           
-| | | |                                 | |          / _| | | | |          
-| |_| |__   ___   ___  ___  ___ _ __ ___| |_    ___ | |_  | |_| |__   ___  
-| __| '_ \ / _ \ / __|/ _ \/ __| '__/ _ \ __|  / _ \|  _| | __| '_ \ / _ \ 
-| |_| | | |  __/ \__ \  __/ (__| | |  __/ |_  | (_) | |   | |_| | | |  __/ 
- \__|_|_|_|\___| |___/\___|\___|_|  \___|\__|  \___/|_|    \__|_| |_|\___| 
-| |   | | | | |                | |                                         
-| |__ | | | | |_ ___  _ __ ___ | |__                                       
-| '_ \| | | | __/ _ \| '_ ` _ \| '_ \                                      
-| | | | | | | || (_) | | | | | | |_) |                                     
-|_| |_|_|_|  \__\___/|_| |_| |_|_.__/                                                                                                                                                                    
-""")
     response = "" 
     while response not in answers: 
         response = input("1 ) Start New Game | 2) Instructions |3) Podcast \n").lower()
@@ -650,7 +637,7 @@ def mainMenu():
         else:
             print("Not a valid option. Choose again.\n")
 
-
+# Intro Text
 delprint(W+"Welcome to The Secret of the HLL Tomb!\n")
 delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
 delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
