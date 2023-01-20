@@ -48,8 +48,8 @@ final_question = ["Continue", "Salvation"]
 answers = ["1","2","3"]
 
 
-
 class newUser:
+    #Creates a new user when starting the program
     definition = "A new user to play the game."
 
     def __init__(self, name, age):
@@ -60,12 +60,8 @@ class newUser:
     def from_input(cls):
         return cls(
             input('Name: '),
-            int(input('Age: ')), 
+            int(input('Age: '))
         )
-
-
-user = newUser('name', 'age')
-
 
 
 def addToInventory(item):
@@ -112,8 +108,8 @@ def startGame():
     delprint("Jon: Welcome Traveller!\n")
     delprint("Jon: You look weary? Long Uber?\n")
     delprint("Jon: My name is Jon and I will be your guide through this Tomb!\n")
-    delprint("Jon: "+name+" right? What a lovely name.\n")
-    delprint("Jon: I knew a "+name+" once. A Traveller. Died in this very tomb\n")
+    delprint(f"Jon: {user.name} right? What a lovely name.\n")
+    delprint(f"Jon: I knew a {user.name} once. A Traveller. Died in this very tomb\n")
     delprint("Jon: I see you brought a bag of inventory with you. No sword?\n")
     delprint("Jon: Eh....I'm sure you'll be fine.\n")
 
@@ -184,7 +180,7 @@ def owenTomb():
     
     response = ""
     while response not in yes_no: 
-        delprint("Owen: Wait, I know you. Are you "+name+" ?\n")
+        delprint(f"Owen: Wait, I know you. Are you {user.name} ?\n")
         response = input("(yes / no)\n").lower()
         if response == "yes":
             delprint("Owen: I have heard much about you. I am Owen eh.\n")
@@ -206,7 +202,7 @@ def owenTomb():
         print("Owen: What work can one never finish?\n")
         response = input("1 )A rubix cube | 2) An autobiography |3) Hoovering \n").lower()
         if response == "2":
-            delprint("Owen: Very good "+name+". You're wiser than you look.\n")
+            delprint(f"Owen: Very good {user.name}. You're wiser than you look.\n")
             delprint("Owen: Here take this key. You are one step closer eh.\n")
             addToInventory("OWENS KEY")
             delprint("You hold a key in your hands \U0001F5DD. \n")   
@@ -243,7 +239,7 @@ def liamTomb():
     delprint("He has a long ragged beard with a scar across his face.\n")
     delprint("Liam: Ha! A Traveller! Neeep!\n")
     delprint("His voice is so high and shrill it hurts your ears.\n")
-    delprint("Liam: You scared me. You must be "+name+" I heard all about.\n")
+    delprint(f"Liam: You scared me. You must be {user.name} I heard all about.\n")
     
     response = ""
     while response not in yes_no: 
@@ -321,7 +317,7 @@ def kevinTomb():
             delprint("Some of the gold wallpaper starts to peel from the walls.\n")
             delprint("He continues to stand with his arms aloft for some time.\n")
             delprint("Kevin: Hmm if you're not the plumber....\n")
-            delprint("Kevin: You must be this "+name+" I hear about.\n")
+            delprint(f"Kevin: You must be this {user.name} I hear about.\n")
             
         elif response == "yes":
             delprint(O+"Kevin: Oh thank god. I've been waiting for days! \n")
@@ -372,7 +368,7 @@ def kevinTomb():
 def jonInnOwen():
     # Function for heading to the inn after leaving Owens tomb.
     response = ""
-    delprint(W+"Jon: Ah welcome back young "+name+". Sorry thats ageist of me.\n")
+    delprint(W+f"Jon: Ah welcome back young {user.name}. Sorry thats ageist of me.\n")
     delprint("Jon: It looks like you survived Owen's Tomb. I'm surprised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...nevermind.\n")
     while response not in yes_no: 
@@ -430,7 +426,7 @@ def jonInnOwenCrossroads():
 def jonInnLiam():
     # Function for heading to the inn after leaving Liams tomb.
     response = ""
-    delprint(W+"Jon: Ah hello again "+name+". You're not dead!\n")
+    delprint(W+f"Jon: Ah hello again {user.name}. You're not dead!\n")
     while response not in yes_no: 
         delprint("Jon: Lets look at that inventory again yes?\n")
         response = input("(yes / no)\n").lower()
@@ -438,10 +434,10 @@ def jonInnLiam():
             printInventory()
             delprint("Jon: Ah wonderful stuff. Two out of 3 now!\n")
             delprint("Jon: Oh. You still have those photos and....MORE?\n")
-            delprint("Jon: You are quite an odd person "+name+".\n")
+            delprint(f"Jon: You are quite an odd person {user.name}.\n")
         elif response == "no":
             delprint("Jon: What?! Why not?!\n")
-            delprint("Jon: If you're hiding something "+name+" I'll find out\n")
+            delprint(f"Jon: If you're hiding something {user.name} I'll find out\n")
             delprint("He seems to pout and kick at a loose stone.\n")
         else:
             delprint("Jon: What? I SAID DO YOU WANT TO CHECK YOUR INVENTORY?\n")
@@ -481,14 +477,14 @@ def jonInnLiamCrossroads():
 def jonInnKevin():
     # Function for heading to the inn after leaving Kevins tomb.
     response = ""
-    delprint(W+"Jon: Good lord "+name+". You nearly killed me.\n")
+    delprint(W+f"Jon: Good lord {user.name}. You nearly killed me.\n")
     delprint("Jon: You've ruined my hat and crushed my vape.\n")
     while response not in yes_no: 
         delprint("Jon: Can I see inside your bag?\n")
         response = input("(yes / no)\n").lower()
         if response == "yes":
             printInventory()
-            delprint("Jon: My goodness "+name+" you've done it!\n")
+            delprint(f"Jon: My goodness {user.name} you've done it!\n")
             delprint("Jon: I underestimated you\n")
             delprint("Jon: I really wish you'd get rid of those photos though\n")
             get_visitor_data()
@@ -557,7 +553,7 @@ def temple_of_pods():
     delprint("Jon: Yes they're here now.\n")
     delprint("Jon: NO I AM NOT DOING THE SMOKE & MUSIC THING \n")
     delprint("Jon glances at you sheepishly and puts away the phone \n")
-    delprint("Jon: It is time "+name+"\n")
+    delprint(f"Jon: It is time {user.name} \n")
     while response not in yes_no: 
         delprint("Are you ready?\n")
         response = input("(yes / no)\n").lower()
@@ -615,17 +611,17 @@ def finalScene():
             delprint("Steph: Choose again.\n")
     
 
-    delprint(G+"Liam: It is time for your final choice "+name+".\n")
+    delprint(G+f"Liam: It is time for your final choice {user.name}.\n")
     delprint(R+"Owen: You must choose between a further test of your might...\n")
     delprint(O+"Kevin: ...or salavation at last.\n")
     delprint(W+"Jon appears from behind a pillar. Steph runs off behind him.\n")
     
     answer = ""
     while answer not in final_question:
-        delprint("Jon: So what will it be "+name+"?\n")
+        delprint(f"Jon: So what will it be {user.name}?\n")
         answer = input("(continue / salvation)\n").lower()
         if answer == "continue":
-            delprint("Jon: Good luck on your travels "+name+"\n")
+            delprint(f"Jon: Good luck on your travels {user.name}\n")
             delprint("Jon: Goodbye.\n")
             delprint("On the floor in front of you appears a url.\n")
             delprint("https://supersheep50.github.io/hey-look-listen-quiz/ \n")
@@ -633,9 +629,9 @@ def finalScene():
             delprint("THE END. CONGRATULATIONS!\n")
             mainMenu()
         elif answer == "salvation":
-            delprint("Jon: You have earned this rest "+name+"\n")
+            delprint(f"Jon: You have earned this rest {user.name}\n")
             delprint("Jon: Your ears and heart will thank you.\n")
-            delprint("Jon: Good luck on your travels "+name+"\n")
+            delprint(f"Jon: Good luck on your travels {user.name}\n")
             delprint("Jon: Goodbye.\n")
             delprint("On the floor in front of you appears a url.\n")
             delprint("https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7 \n")
@@ -701,8 +697,8 @@ delprint("Together, they will open a door at the end of the tomb.\n")
 delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
 delprint("Make sure to check out the instructions before you play!\n")
 delprint("Now, what is your name and age, traveller?\n")
-newUser.from_input()
-print(user.name)
+user = newUser.from_input()
+print(f"Goodluck {user.name}")
 mainMenu()
 
 
