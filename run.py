@@ -7,7 +7,7 @@ import sys,time
 import os
 
 # Code to print slower than default (Credit in Readme)
-def delprint(text="Type a string in",delay_time=.03): 
+def delprint(text="Type a string in",delay_time=.00): 
   for character in text:      
     sys.stdout.write(character) 
     sys.stdout.flush()
@@ -64,7 +64,20 @@ def startGame():
     """
     global inventory
     global itemAdd
-    
+    print(C+f"""
+  _   _                                   _            __   _   _           
+| | | |                                 | |          / _| | | | |          
+| |_| |__   ___   ___  ___  ___ _ __ ___| |_    ___ | |_  | |_| |__   ___  
+| __| '_ \ / _ \ / __|/ _ \/ __| '__/ _ \ __|  / _ \|  _| | __| '_ \ / _ \ 
+| |_| | | |  __/ \__ \  __/ (__| | |  __/ |_  | (_) | |   | |_| | | |  __/ 
+ \__|_|_|_|\___| |___/\___|\___|_|  \___|\__|  \___/|_|    \__|_| |_|\___| 
+| |   | | | | |                | |                                         
+| |__ | | | | |_ ___  _ __ ___ | |__                                       
+| '_ \| | | | __/ _ \| '_ ` _ \| '_ \                                      
+| | | | | | | || (_) | | | | | | |_) |                                     
+|_| |_|_|_|  \__\___/|_| |_| |_|_.__/                                                                                                                                                                    
+""")
+
     delprint(W+"You stand in front of an old stone passageway.\n")
     delprint("You push on the wall and it slowly slides open. You step inside.\n")
     delprint("It is a huge cave.\n") 
@@ -534,6 +547,7 @@ def temple_of_pods():
 
 # Function for meeting the guard outside the Temple of the Pods.
 def stephGuard():
+    response = ""
     delprint("She moves her sword to block the door as you walk up.\n")
     delprint(C+"Steph: I am Stephanie. The Protector of the Pods.\n")
     delprint("You remember this is the woman who blocked Kevin's toilet.\n")
@@ -549,7 +563,10 @@ def stephGuard():
     elif response == "no":
         delprint("Steph: Your journey ends here.\n")
         tryAgain()
-    
+    else:
+        delprint("Steph: Say what? Try again pal.\n")
+        stephGuard()
+
 # Final scene of the game.
 def finalScene():
     response = ""
@@ -584,8 +601,8 @@ def finalScene():
             delprint("On the floor in front of you appears a url.\n")
             delprint("https://supersheep50.github.io/hey-look-listen-quiz/ \n")
             delprint("Copy & paste the link to enjoy more HLL fun.\n")
-            delprint("THE END. CONGRATULATIONS!")
-            tryAgain()
+            delprint("THE END. CONGRATULATIONS!\n")
+            mainMenu()
         elif answer == "salvation":
             delprint("Jon: You have earned this rest "+name+"\n")
             delprint("Jon: Your ears and heart will thank you.\n")
@@ -594,8 +611,8 @@ def finalScene():
             delprint("On the floor in front of you appears a url.\n")
             delprint("https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7 \n")
             delprint("Copy & paste the link to enjoy more HLL fun.\n")
-            delprint("THE END. CONGRATULATIONS!")
-            tryAgain()
+            delprint("THE END. CONGRATULATIONS! \n")
+            mainMenu()
         else:
             delprint("Jon: Try typing better. Sigh.\n")
     
@@ -641,6 +658,7 @@ def mainMenu():
             print("Apple Music, Spotify and any major streaming platform.\n")
             print("Thank you!\n")
             print("https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7 \n")
+            mainMenu()
         else:
             print("Not a valid option. Choose again.\n")
 
