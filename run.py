@@ -368,7 +368,9 @@ def kevinTomb():
 def jonInnOwen():
     # Function for heading to the inn after leaving Owens tomb.
     response = ""
-    delprint(W+f"Jon: Ah welcome back young {user.name}. Sorry thats ageist of me.\n")
+    delprint(W+f"Jon: Ah welcome back young {user.name}.")
+    delprint("Jon: Sorry thats ageist of me.\n")
+    delprint(f"Wait...you're only {user.age}?!")
     delprint("Jon: It looks like you survived Owen's Tomb. I'm surprised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...nevermind.\n")
     while response not in yes_no: 
