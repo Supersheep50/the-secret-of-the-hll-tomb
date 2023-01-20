@@ -47,6 +47,24 @@ final_question = ["Continue", "Salvation"]
 answers = ["1","2","3"]
 
 
+
+class newUser:
+    definition = "A new user to play the game."
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+       
+    @classmethod
+    def from_input(cls):
+        return cls(
+            input('Name: '),
+            int(input('Age: ')), 
+        )
+
+user = newUser('name','age')
+
+
 # Add inventory function
 def addToInventory(item):
     inventory.append(item)
@@ -78,6 +96,7 @@ def startGame():
 |_| |_|_|_|  \__\___/|_| |_| |_|_.__/                                                                                                                                                                    
 """)
 
+    print("(c) Jonathan Morrissey - Developer 2023")
     delprint(W+"You stand in front of an old stone passageway.\n")
     delprint("You push on the wall and it slowly slides open. You step inside.\n")
     delprint("It is a huge cave.\n") 
@@ -631,6 +650,7 @@ print(C+f"""
 | | | | | | | || (_) | | | | | | |_) |                                     
 |_| |_|_|_|  \__\___/|_| |_| |_|_.__/                                                                                                                                                                    
 """)
+print("(c) Jonathan Morrissey - Developer 2023")
 
 # Main menu for game.
 def mainMenu():
@@ -669,10 +689,9 @@ delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")
 delprint("Together, they will open a door at the end of the tomb.\n")
 delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
 delprint("Make sure to check out the instructions before you play!\n")
-delprint("Now, what is your name, traveller?\n")
-name = input("Enter your name \n")
-print("Good luck "+name+"!\n")
-
+delprint("Now, what is your name and age, traveller?\n")
+newUser.from_input()
+print(newUser('name','age'))
 mainMenu()
 
 
@@ -681,3 +700,5 @@ mainMenu()
 
 
 
+
+       
