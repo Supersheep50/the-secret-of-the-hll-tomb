@@ -619,7 +619,7 @@ print(C+f"""
 def mainMenu():
     response = "" 
     while response not in answers: 
-        response = input("1 ) Start New Game | 2) Instructions |3) Podcast \n").lower()
+        response = input("1 ) Start New Game | 2) Instructions |3) HLL Podcast \n").lower()
         if response == "1":
             startGame()   
         elif response == "2":
@@ -633,7 +633,14 @@ def mainMenu():
             print("But dont fret you can Try Again!\n")
             mainMenu()
         elif response == "3":
-            print("Link to podcast.\n")
+            print("The HLL Podcast is a videogame podcast with 4 Irish lads!\n")
+            print("We cover a different videogame topic every 2nd Wednesday.\n")
+            print("We cover games old and new! From RPGS to  Platformers!\n")
+            print("It would be awesome if you gave us a listen.\n")
+            print("Check out the Hey Look Listen Podcast on....\n")
+            print("Apple Music, Spotify and any major streaming platform.\n")
+            print("Thank you!\n")
+            print("https://open.spotify.com/show/1qWCjKkHILrRLscI33N0v7 \n")
         else:
             print("Not a valid option. Choose again.\n")
 
