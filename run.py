@@ -139,7 +139,6 @@ def startGame():
     innCrossroads()
 
 
-
 def innCrossroads():
     # Crossroads function where user meert guide to go different directions.
     response = ""
@@ -164,7 +163,6 @@ def innCrossroads():
             innCrossroads()
         else:
             delprint("Thats not a direction there pal. Try again.\n")
-
 
 
 def owenTomb():
@@ -222,7 +220,6 @@ def owenTomb():
             
         else:
             delprint("Owen: Not quite. Try again.\n")
-
 
 
 def liamTomb():
@@ -690,9 +687,6 @@ def mainMenu():
         else:
             print("Not a valid option. Choose again.\n")
 
-
-
-        
         
 # Intro Text & User validation
 delprint(W+"Welcome to The Secret of the HLL Tomb!\n")
