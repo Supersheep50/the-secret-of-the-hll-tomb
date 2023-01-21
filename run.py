@@ -1,18 +1,18 @@
-#imports
+# imports
 import gspread
 from google.oauth2.service_account import Credentials
-import webbrowser
 import emoji
-import sys,time
+import sys, time
 import os
 
 
-def delprint(text="Type a string in",delay_time=.00): 
-# Code to print slower than default (Credit in Readme)
+def delprint(text="Type a string in", delay_time=.03): 
+    # Code to print slower than default (Credit in Readme)
     for character in text:      
         sys.stdout.write(character) 
     sys.stdout.flush()
     time.sleep(delay_time)
+
 
 # Google apis
 SCOPE = [
@@ -28,15 +28,14 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('the-secret-of-the-hll-tomb')
 
 
-
 # Color definitions - credit to StackoverFlow in Readme.
-W  = '\033[0m'  # white (normal)
-R  = '\033[31m' # red
-G  = '\033[32m' # green
-O  = '\033[33m' # orange
-B  = '\033[34m' # blue
-P  = '\033[35m' # purple
-C  = '\033[96m' #cyan
+W = '\033[0m'  # white (normal)
+R = '\033[31m'  # red
+G = '\033[32m'  # green
+O = '\033[33m'  # orange
+B = '\033[34m'  # blue
+P = '\033[35m'  # purple
+C = '\033[96m'  # cyan
 
 
 # User input controls & inventory
@@ -45,24 +44,24 @@ inventory = ["WATER BOTTLE", "COMPASS", "WEIRD PHOTOS OF THAT GUY JON"]
 yes_no = ["yes","no"]
 use_dont_use = ["use", "dont use"]
 final_question = ["Continue", "Salvation"]
-answers = ["1","2","3"]
+answers = ["1", "2", "3"]
+responses = ["", " "]
 
 
 class newUser:
-    #Creates a new user when starting the program
-    definition = "A new user to play the game."
-
     def __init__(self, name, age):
         self.name = name
         self.age = age
-       
+
     @classmethod
     def from_input(cls):
-        return cls(
-            input('Name: '),
-            int(input('Age: '))
-        )
-
+        name = input("What is your name? ")
+        age = input("What is your age? ")
+        if name.isalpha() and age.isnumeric():
+            return cls(name, age)
+        else:
+            return None
+ 
 
 def addToInventory(item):
     # Add inventory function
@@ -73,7 +72,6 @@ def printInventory():
     # Show items in inventory to the user
     for i in inventory:
         print(i)
-
 
 
 def startGame():
@@ -368,9 +366,9 @@ def kevinTomb():
 def jonInnOwen():
     # Function for heading to the inn after leaving Owens tomb.
     response = ""
-    delprint(W+f"Jon: Ah welcome back young {user.name}.")
+    delprint(W+f"Jon: Ah welcome back young {user.name}.\n")
     delprint("Jon: Sorry thats ageist of me.\n")
-    delprint(f"Wait...you're only {user.age}?!")
+    delprint(f"Wait...you're only {user.age}?!\n")
     delprint("Jon: It looks like you survived Owen's Tomb. I'm surprised.\n")
     delprint("Jon: Why? Oh eh...you just don't seem too...nevermind.\n")
     while response not in yes_no: 
@@ -594,6 +592,7 @@ def stephGuard():
         delprint("Steph: Say what? Try again pal.\n")
         stephGuard()
 
+
 def finalScene():
     # Final scene of the game.
     response = ""
@@ -691,7 +690,11 @@ def mainMenu():
         else:
             print("Not a valid option. Choose again.\n")
 
-# Intro Text
+
+
+        
+        
+# Intro Text & User validation
 delprint(W+"Welcome to The Secret of the HLL Tomb!\n")
 delprint("The Secret of the HLL Tomb is a text adventure videogame.\n")
 delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")	
@@ -699,9 +702,16 @@ delprint("Together, they will open a door at the end of the tomb.\n")
 delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
 delprint("Make sure to check out the instructions before you play!\n")
 delprint("Now, what is your name and age, traveller?\n")
-user = newUser.from_input()
-print(f"Goodluck {user.name}")
-mainMenu()
+validated = False
+while validated == False:
+    user = newUser.from_input()
+    if user is None:
+        print("Invalid input, please enter a valid name and age.")
+        continue
+    else:
+        validated = True
+        mainMenu()
+
 
 
 
