@@ -1,46 +1,18 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome Supersheep50,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
-
-
-
 # The-Secret-of-the-HLL-Tomb
 
+- The Secret of the HLL-Tomb is a text adventure video game based off of a Podcast I co-host with some friends. Players are required to navigate 3 seperate tombs and acquire 3 keys. These 3 keys are required to open a door at the end of the adventure and complete the game. In each tomb you will meet a stranger who will pose you a riddle, you must answer the riddle correctly to win the key or it's Game Over. 
 
-[Play the deployed version here!]()
+- The player has an inventory to carry the keys and there is also a logbook for users to enter in their names. This is then recorded in a connected Google Worksheet. The main menu lets users start a game, read the instructions or check out our podcast.
+
+[Play the deployed version here!](https://the-secret-of-the-hll-tomb.herokuapp.com/)
 
 ## Flowchart
 
+- I created a Flowchart to help plan out the basic journey of the game. This helped massively when designing the tombs and the route the player would take to get to the end of the game. It also helped with regards to user input validation. 
 
-![Flowchart]()
+- I did up moving away from the original layout slightly. Adding in more decisions for the user, a logbook and the ability to explore each path without a Game Over.  
+
+![Flowchart](/documents/flowchart/Python%20Project%20.png)
 
 ## User Stories
 

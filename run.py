@@ -7,7 +7,7 @@ import time
 import os
 
 
-def delprint(text="Type a string in", delay_time=.03):
+def delprint(text="Type a string in", delay_time=.04):
     # Code to print slower than default (Credit in Readme)
     for character in text:
         sys.stdout.write(character)
