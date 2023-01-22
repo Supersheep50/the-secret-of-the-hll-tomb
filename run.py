@@ -698,7 +698,7 @@ delprint("Your goal is to collect the 3 HLL keys \U0001F5DD.\n")
 delprint("Together, they will open a door at the end of the tomb.\n")
 delprint("You will meet 3 strangers along the way, each posing a riddle.\n")
 delprint("Make sure to check out the instructions before you play!\n")
-delprint("Now, what is your name and age, traveller?\n")
+delprint("Now, what is your first name and age, traveller?\n")
 validated = False
 while validated == False:
     user = newUser.from_input()

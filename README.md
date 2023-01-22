@@ -10,7 +10,9 @@
 
 - I created a Flowchart to help plan out the basic journey of the game. This helped massively when designing the tombs and the route the player would take to get to the end of the game. It also helped with regards to user input validation. 
 
-- I did up moving away from the original layout slightly. Adding in more decisions for the user, a logbook and the ability to explore each path without a Game Over.  
+- I also found the flowchart helped with initially working out the functions I would be using and how many would be needed.
+
+- I did end up moving away from the original layout slightly. Adding in more decisions for the user, a logbook and the ability to explore each path without a Game Over.  
 
 ![Flowchart](/documents/flowchart/Python%20Project%20.png)
 
@@ -31,11 +33,35 @@
 
 ### Existing Features
 
+- __Header__
+
+- When the program first boots up you are greeted with a cyan coloured header that presents the name of the game. I chose a font that gave it a slightly creepy vibe. Below the header I have also included some brief text about the basics of the game. 
+
+   ![Header](/documents/testing/header.png)
+
+- __User creation__
+
+    - Below the header and just after the game loads, the user is asked for their name and age. This creates a user profile for the game and is regularly mentioned throughout the game. 
+    
+    ![User creation](/documents/testing/user-creation.png)
 
 - __Main Menu__
-    - 
+
+    - The main menu includes 3 options for the user to choose from. Entering 1 will start a new game for the player. Entering 2 will bring up the instructions for how to play the game and what to expect. Entering 3 will bring up information about the podcast the game is based off of. 
     
-    ![Main menu]()
+    ![Main menu](/documents/testing/main-menu.png)
+
+- __Inventory__
+
+    - The player has a bag with them that contains their inventory. This is where the 3 are stored as the game progresses.
+    
+    ![Inventory](/documents/testing/inventory.png)
+
+- __Error Messages__
+
+    - Any time a user inputs a blank answer or an answer outside of the question parameters an error will show, and then repeat the question for the user. This validation is in place throughout the entire game regardless of the question or input asked.
+
+    ![Error Messages](/documents/testing/error-messages.png)
 
 
 
@@ -95,6 +121,8 @@ The frontend terminal should now be connected and deployed to Heroku.
 ## Credits 
 
 ### Media
+
+- website for header
 
 ### Content 
 
