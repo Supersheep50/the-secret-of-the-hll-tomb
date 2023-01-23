@@ -35,7 +35,7 @@
 
 - __Header__
 
-- When the program first boots up you are greeted with a cyan coloured header that presents the name of the game. I chose a font that gave it a slightly creepy vibe. Below the header I have also included some brief text about the basics of the game. 
+    - When the program first boots up you are greeted with a cyan coloured header that presents the name of the game. I chose a font that gave it a slightly creepy vibe. Below the header I have also included some brief text about the basics of the game. 
 
    ![Header](/documents/testing/header.png)
 
@@ -62,6 +62,42 @@
     - Any time a user inputs a blank answer or an answer outside of the question parameters an error will show, and then repeat the question for the user. This validation is in place throughout the entire game regardless of the question or input asked.
 
     ![Error Messages](/documents/testing/error-messages.png)
+
+- __Logbook__
+
+    - I have included a logbook for users to sign their name as they near the end of the game. I connected the sheet to my code via a Google API.
+
+    ![Logbook](/documents/testing/logbook.png)
+
+- __Emojis__
+
+    - Several different types if emojis are scattered throughout the game to add some visual style.
+
+    ![Emojis](/documents/testing/emojis.png)
+
+ - __Coloured Text__
+
+    - Each character in the story has a different colour for the txt they use. I did this by importing several different types of colour. All are accessible.
+
+     ![Coloured Text](/documents/testing/coloured-text.png)
+
+- __Multiple choice Questions__
+
+    - For each of the riddles players have 3 possible answers they can give. Giving a right answer lets them progress while getting a wrong answer is Game Over. If something else other than one of the 3 answers is entered, the game will validate and ask the question again.
+    
+    ![Multiple choice Questions](/documents/testing/multiple-choice.png)
+
+- __Game Over__
+
+    - If a user gets one of the riddles wrong, it will be Game Over. Like text adventures of the past, I included this to boost replayability. Players will be given the option to Try Again or return to the Main Menu.
+    
+    ![Game Over](/documents/testing/game-over.png)
+
+- __Try Again__
+
+    - When a player gets a riddle wrong, they will be offered the chance to Try Again. Saying Yes will cause the game to restart while saying No will go back to the main menu.
+    
+    ![Try Again](/documents/testing/try-again.png) 
 
 
 
