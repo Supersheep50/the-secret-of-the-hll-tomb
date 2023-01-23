@@ -113,13 +113,6 @@
     - For repeat playthroughs I would like to add the ability to gain xp. 
     - I do hope to work on the game again at a later stage and add it to the HLL website. 
 
-
-
-### Data Structures
-
-__Board Class__
-
-
 ### Refactoring
 
 - __Refactored User Profile code__
@@ -133,8 +126,6 @@ __Board Class__
 Please see the 
 
 ## Deployment
-​
-
 ​
 ### Local Deployment
 ​
@@ -185,12 +176,21 @@ The frontend terminal should now be connected and deployed to Heroku.
 
 ### Media
 - [Patorjk.com](https://patorjk.com/) was used to create the "Tic-Tac-Toe" ASCII lettering in the welcome message.
-- 
+- Emojis used from [Unicode.com](https://unicode.org/emoji/charts/full-emoji-list.html)
 
 ### Content 
 - I used Code Institute's Love Sandwiches Walkthrough ([repo here](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/05-deployment/01-deployment-part-1)) for guidance with code structure, linking my program to Google Sheets using an API, and deployment steps.
 
 - For slower printing to the terminal I used Stackoverflow. The page is [here](https://stackoverflow.com/questions/510348/how-do-i-make-a-time-delay) 
 
-- To change the color of the text I used ANSI color. Page from Stackoverflow found [here](https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences)
+- To change the color of the text I used ANSI color. Page from Stackoverflow helping it explain it to me found [here](https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences)
 
+- For the add inventory function I used this video to help me form the basics of what I needed [here](https://www.youtube.com/watch?v=rvKxC-p6kbg)
+
+- Code to help validate the user input [here](https://initialcommit.com/blog/python-isalpha-string-method) and two seperate sessions with Tutor Support.
+
+- To create the ability to move from tomb to tomb I referenced this page [here](https://www.makeuseof.com/python-text-adventure-game-create/)
+
+- Used Love Sandwiches walkthrough to build out collecting data for the logbook.
+
+- To clear the screen after the user selects Try Again, I referenced this page [here](https://stackoverflow.com/questions/4810537/how-to-clear-the-screen-in-python)

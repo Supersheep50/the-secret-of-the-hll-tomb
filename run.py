@@ -33,7 +33,7 @@ SHEET = GSPREAD_CLIENT.open('the-secret-of-the-hll-tomb')
 W = '\033[0m'  # white (normal)
 R = '\033[31m'  # red
 G = '\033[32m'  # green
-O = '\033[33m'  # orange
+O = '\033[33m'  # orange  # noqa
 B = '\033[34m'  # blue
 P = '\033[35m'  # purple
 C = '\033[96m'  # cyan
@@ -50,6 +50,7 @@ responses = ["", " "]
 
 
 class newUser:
+    # Code for class object to create a User Profile
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -65,7 +66,7 @@ class newUser:
 
 
 def addToInventory(item):
-    # Add inventory function
+    # Add inventory function (credit in readme)
     inventory.append(item)
 
 
@@ -83,10 +84,10 @@ def startGame():
     global inventory
     global itemAdd
     print(C+f"""
-    _   _                                   _            __   _   _ 
+ _   _                                   _            __   _   _  # noqa 
 | | | |                                 | |          / _| | | | |       
 | |_| |__   ___   ___  ___  ___ _ __ ___| |_    ___ | |_  | |_| |__   ___  
-| __| '_ \ / _ \ / __|/ _ \/ __| '__/ _ \ __|  / _ \|  _| | __| '_ \ / _ \ 
+| __| '_ \ / _ \ / __|/ _ \/ __| '__/ _ \ __|  / _ \|  _| | __| '_ \ / _ \  # noqa 
 | |_| | | |  __/ \__ \  __/ (__| | |  __/ |_  | (_) | |   | |_| | | |  __/ 
  \__|_|_|_|\___| |___/\___|\___|_|  \___|\__|  \___/|_|    \__|_| |_|\___| 
 | |   | | | | |                | |                                         
@@ -499,7 +500,7 @@ def jonInnKevin():
 
 
 def get_visitor_data():
-    # Function to grab a user singatuve for the logbook.
+    # Function to grab a user signature for the logbook (credit in readme)
     delprint("Jon: Hows his toilet by the way? \n")
     delprint("Jon: How do I know about it?...nevermind.\n")
     delprint("Jon: Enough about bowel movements.\n")
