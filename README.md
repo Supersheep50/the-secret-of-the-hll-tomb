@@ -43,67 +43,67 @@
 
     - When the program first boots up you are greeted with a cyan coloured header that presents the name of the game. I chose a font that gave it a slightly creepy vibe. Below the header I have also included some brief text about the basics of the game. 
 
-   ![Header](/documents/testing/header.png)
+   ![Header](/documents/images/header.png)
 
 - __User creation__
 
     - Below the header and just after the game loads, the user is asked for their name and age. This creates a user profile for the game and is regularly mentioned throughout the game. 
     
-    ![User creation](/documents/testing/user-creation.png)
+    ![User creation](/documents/images/user-creation.png)
 
 - __Main Menu__
 
     - The main menu includes 3 options for the user to choose from. Entering 1 will start a new game for the player. Entering 2 will bring up the instructions for how to play the game and what to expect. Entering 3 will bring up information about the podcast the game is based off of. 
     
-    ![Main menu](/documents/testing/main-menu.png)
+    ![Main menu](/documents/images/main-menu.png)
 
 - __Inventory__
 
     - The player has a bag with them that contains their inventory. This is where the 3 are stored as the game progresses.
     
-    ![Inventory](/documents/testing/inventory.png)
+    ![Inventory](/documents/images/inventory.png)
 
 - __Error Messages__
 
     - Any time a user inputs a blank answer or an answer outside of the question parameters an error will show, and then repeat the question for the user. This validation is in place throughout the entire game regardless of the question or input asked.
 
-    ![Error Messages](/documents/testing/error-messages.png)
+    ![Error Messages](/documents/images/error-messages.png)
 
 - __Logbook__
 
     - I have included a logbook for users to sign their name as they near the end of the game. I connected the sheet to my code via a Google API.
 
-    ![Logbook](/documents/testing/logbook.png)
+    ![Logbook](/documents/images/logbook.png)
 
 - __Emojis__
 
     - Several different types if emojis are scattered throughout the game to add some visual style.
 
-    ![Emojis](/documents/testing/emojis.png)
+    ![Emojis](/documents/images/emojis.png)
 
  - __Coloured Text__
 
     - Each character in the story has a different colour for the txt they use. I did this by importing several different types of colour. All are accessible.
 
-     ![Coloured Text](/documents/testing/coloured-text.png)
+     ![Coloured Text](/documents/images/coloured-text.png)
 
 - __Multiple choice Questions__
 
     - For each of the riddles players have 3 possible answers they can give. Giving a right answer lets them progress while getting a wrong answer is Game Over. If something else other than one of the 3 answers is entered, the game will validate and ask the question again.
     
-    ![Multiple choice Questions](/documents/testing/multiple-choice.png)
+    ![Multiple choice Questions](/documents/images/multiple-choice.png)
 
 - __Game Over__
 
     - If a user gets one of the riddles wrong, it will be Game Over. Like text adventures of the past, I included this to boost replayability. Players will be given the option to Try Again or return to the Main Menu.
     
-    ![Game Over](/documents/testing/game-over.png)
+    ![Game Over](/documents/images/game-over.png)
 
 - __Try Again__
 
     - When a player gets a riddle wrong, they will be offered the chance to Try Again. Saying Yes will cause the game to restart while saying No will go back to the main menu.
     
-    ![Try Again](/documents/testing/try-again.png) 
+    ![Try Again](/documents/images/try-again.png) 
 
 
 ### Existing Features
@@ -122,9 +122,11 @@ __Board Class__
 
 ### Refactoring
 
+- __Refactored User Profile code__
+
     - Originally the user would enter their name at the beginging of the game but it would not create a user profile to store the data for the entirety of the game. I decided to make use of some OOP and add the ability to create a user and then also validate the users name and age. Validating that there was no blank spaces proved particualrly tricky. 
 
-    ![Refactored Code](/documents/testing/user-refactored.png) 
+    ![Refactored Code](/documents/images/user-refactored.png) 
 
 ## Testing 
 
@@ -136,7 +138,14 @@ Please see the
 ​
 ### Local Deployment
 ​
+*Gitpod* IDE was used to write the code for this project.
 
+To make a local copy of this repository, you can clone the project by typing the follow into your IDE terminal:
+- `git clone https://supersheep5-thesecretof-31lde9cg21c.ws-eu83.gitpod.io`
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://supersheep5-thesecretof-31lde9cg21c.ws-eu83.gitpod.io)
 ​
 ### Heroku Deployment
 ​
