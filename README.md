@@ -184,9 +184,13 @@ The frontend terminal should now be connected and deployed to Heroku.
 ## Credits 
 
 ### Media
-
-- website for header
+- [Patorjk.com](https://patorjk.com/) was used to create the "Tic-Tac-Toe" ASCII lettering in the welcome message.
+- 
 
 ### Content 
+- I used Code Institute's Love Sandwiches Walkthrough ([repo here](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/05-deployment/01-deployment-part-1)) for guidance with code structure, linking my program to Google Sheets using an API, and deployment steps.
 
+- For slower printing to the terminal I used Stackoverflow. The page is [here](https://stackoverflow.com/questions/510348/how-do-i-make-a-time-delay) 
+
+- To change the color of the text I used ANSI color. Page from Stackoverflow found [here](https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences)
 
