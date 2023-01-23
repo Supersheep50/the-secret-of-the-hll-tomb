@@ -20,14 +20,20 @@
 
   -   #### First Time Visitor Goals
 
-      1. 
+      1. As a first time user I want to understand what is The Secret of the HLL Tomb. 
+      2. As a first time visitor I want to understand how to play The Secret of the HLL Tomb. 
+      3. As a first time user I want to understand how to start the game, check the instructions and also read up on the podcast.
+      4. As a first time visitor I want to try to beat the game and enter my name into the logbook.
 
   -   #### Returning Visitor Goals
 
-      1. 
+      1. As a returning visitor I want to explore the other directions of the game. 
+      2. As a returning visitor I want to try the other ending of the game. 
+      3. As a retrning visitor I want to beat the game quicker than before.
 
   -   #### Frequent User Goals
-      1. 
+      1. As a frequent user I want to experience every multiple choice answer and direction in the game. 
+      2. As a frequent user I want to have my name in the logbook multiple times. 
 
 ## Features
 
@@ -100,6 +106,14 @@
     ![Try Again](/documents/testing/try-again.png) 
 
 
+### Existing Features
+
+    - I would love to add some music to the game to add to the atmosphere. Right now there is no music of any kind in the game. 
+    - Sadly due to time constraints I was not able to add a weapon system to the game. In the future I would like to add the ability to fight monstors. 
+    - For repeat playthroughs I would like to add the ability to gain xp. 
+    - I do hope to work on the game again at a later stage and add it to the HLL website. 
+
+
 
 ### Data Structures
 
@@ -107,6 +121,10 @@ __Board Class__
 
 
 ### Refactoring
+
+    - Originally the user would enter their name at the beginging of the game but it would not create a user profile to store the data for the entirety of the game. I decided to make use of some OOP and add the ability to create a user and then also validate the users name and age. Validating that there was no blank spaces proved particualrly tricky. 
+
+    ![Refactored Code](/documents/testing/user-refactored.png) 
 
 ## Testing 
 
