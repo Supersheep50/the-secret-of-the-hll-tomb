@@ -126,7 +126,6 @@
 Please see the 
 
 ## Deployment
-​
 ### Local Deployment
 ​
 *Gitpod* IDE was used to write the code for this project.
@@ -171,11 +170,11 @@ For Heroku deployment, follow these steps to connect your GitHub repository to t
 
 The frontend terminal should now be connected and deployed to Heroku.
 
-
 ## Credits 
 
 ### Media
 - [Patorjk.com](https://patorjk.com/) was used to create the "Tic-Tac-Toe" ASCII lettering in the welcome message.
+
 - Emojis used from [Unicode.com](https://unicode.org/emoji/charts/full-emoji-list.html)
 
 ### Content 
