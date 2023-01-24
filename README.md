@@ -4,6 +4,8 @@
 
 - The player has an inventory to carry the keys and there is also a logbook for users to enter in their names. This is then recorded in a connected Google Worksheet. The main menu lets users start a game, read the instructions or check out our podcast.
 
+- For many years now I have wanted to build a text adventure video game and I am absolutely delightied I got the chance to put my idea into action. I hope you enjoy!
+
 [Play the deployed version here!](https://the-secret-of-the-hll-tomb.herokuapp.com/)
 
 ## Flowchart
@@ -74,6 +76,12 @@
     - I have included a logbook for users to sign their name as they near the end of the game. I connected the sheet to my code via a Google API.
 
     ![Logbook](/documents/images/logbook.png)
+
+- __Google Sheet__
+
+    - Screenshot of Google Sheet for the logbook
+   
+    ![Logbook](/documents/images/google-sheet.png)
 
 - __Emojis__
 
