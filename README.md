@@ -6,6 +6,8 @@
 
 - For many years now I have wanted to build a text adventure video game and I am absolutely delightied I got the chance to put my idea into action. I hope you enjoy!
 
+- * Be advised I originally had the text scroll speed to a much slower speed, to repliacte someone typing. On advice of my mentor I have made it faster to make things easier for the assesor. 
+
 [Play the deployed version here!](https://the-secret-of-the-hll-tomb.herokuapp.com/)
 
 ## Flowchart
