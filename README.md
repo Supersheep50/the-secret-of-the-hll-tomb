@@ -105,8 +105,7 @@
     
     ![Try Again](/documents/images/try-again.png) 
 
-
-### Existing Features
+- __Features left to implement__
 
     - I would love to add some music to the game to add to the atmosphere. Right now there is no music of any kind in the game. 
     - Sadly due to time constraints I was not able to add a weapon system to the game. In the future I would like to add the ability to fight monstors. 
@@ -123,9 +122,10 @@
 
 ## Testing 
 
-Please see the 
+- Please see the [Testing file](testing.md) for manual & validator testing.
 
 ## Deployment
+
 ### Local Deployment
 ​
 *Gitpod* IDE was used to write the code for this project.
