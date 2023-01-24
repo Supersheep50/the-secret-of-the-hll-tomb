@@ -33,6 +33,9 @@ The program was tested manually by going through all possible error validation m
 |Key use: enter a number |Yes|![Successful error message](/documents/testing/key-use.png)|
 |Key use: enter a space |Yes|![Successful error message](/documents/testing/key-use.2.png)|
 |Key use: enter a special character |Yes|![Successful error message](/documents/testing/key-use.3.png)|
+|Final choice error: enter a space |Yes|![Successful error message](/documents/testing/final-choice-error.png)|
+|Final choice error: enter a special character |Yes|![Successful error message](/documents/testing/final-choice-error.2.png)|
+|Final choice error: enter a number |Yes|![Successful error message](/documents/testing/final-choice-error.3.png))|
 |Update Google Sheet|Yes|![Updated spreadsheet](documentation/testing/high_score_sheet.png)
 
 
