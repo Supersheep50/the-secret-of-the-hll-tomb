@@ -6,7 +6,7 @@
 
 - For many years now I have wanted to build a text adventure video game and I am absolutely delightied I got the chance to put my idea into action. I hope you enjoy!
 
-- * Be advised I originally had the text scroll speed to a much slower speed, to replicate someone typing. On advice of my mentor I have made it faster to make things easier for the assesor. 
+- *Be advised I originally had the text scroll speed to a much slower speed, to replicate someone typing. On advice of my mentor I have made it faster to make things easier for the assesor. 
 
 [Play the deployed version here!](https://the-secret-of-the-hll-tomb.herokuapp.com/)
 
@@ -33,7 +33,7 @@
 
       1. As a returning visitor I want to explore the other directions of the game. 
       2. As a returning visitor I want to try the other ending of the game. 
-      3. As a retrning visitor I want to beat the game quicker than before.
+      3. As a returning visitor I want to beat the game quicker than before.
 
   -   #### Frequent User Goals
       1. As a frequent user I want to experience every multiple choice answer and direction in the game. 
@@ -63,7 +63,7 @@
 
 - __Inventory__
 
-    - The player has a bag with them that contains their inventory. This is where the 3 are stored as the game progresses.
+    - The player has a bag with them that contains their inventory. This is where the 3 keys are stored as the game progresses.
     
     ![Inventory](/documents/images/inventory.png)
 
@@ -87,13 +87,13 @@
 
 - __Emojis__
 
-    - Several different types if emojis are scattered throughout the game to add some visual style.
+    - Several different types of emojis are scattered throughout the game to add some visual style.
 
     ![Emojis](/documents/images/emojis.png)
 
  - __Coloured Text__
 
-    - Each character in the story has a different colour for the txt they use. I did this by importing several different types of colour. All are accessible.
+    - Each character in the story has a different colour for the text they use. I did this by importing several different types of colour. All are accessible.
 
      ![Coloured Text](/documents/images/coloured-text.png)
 
@@ -118,7 +118,7 @@
 - __Features left to implement__
 
     - I would love to add some music to the game to add to the atmosphere. Right now there is no music of any kind in the game. 
-    - Sadly due to time constraints I was not able to add a weapon system to the game. In the future I would like to add the ability to fight monstors. 
+    - Sadly due to time constraints I was not able to add a weapon system to the game. In the future I would like to add the ability to fight monsters. 
     - For repeat playthroughs I would like to add the ability to gain xp. 
     - I do hope to work on the game again at a later stage and add it to the HLL website. 
 
@@ -126,7 +126,7 @@
 
 - __Refactored User Profile code__
 
-    - Originally the user would enter their name at the beginging of the game but it would not create a user profile to store the data for the entirety of the game. I decided to make use of some OOP and add the ability to create a user and then also validate the users name and age. Validating that there was no blank spaces proved particualrly tricky. 
+    - Originally the user would enter their name at the beginning of the game but it would not create a user profile to store the data for the entirety of the game. I decided to make use of some OOP and add the ability to create a user and then also validate the users name and age. Validating that there was no blank spaces proved particualrly tricky. 
 
     ![Refactored Code](/documents/images/user-refactored.png) 
 
@@ -183,7 +183,7 @@ The frontend terminal should now be connected and deployed to Heroku.
 ## Credits 
 
 ### Media
-- [Patorjk.com](https://patorjk.com/) was used to create the "Tic-Tac-Toe" ASCII lettering in the welcome message.
+- [Patorjk.com](https://patorjk.com/) was used to create the heading.
 
 - Emojis used from [Unicode.com](https://unicode.org/emoji/charts/full-emoji-list.html)
 
@@ -207,4 +207,4 @@ The frontend terminal should now be connected and deployed to Heroku.
 
 ## Acknowledgements 
 
-- Big shout out to my partner Stephanie for all her help and wisodm! Thanks to tutor support for helping on a couple of issues and to my mentor AJ for the guidance.
+- Big shout out to my partner Stephanie for all her help and wisdom! Thanks to tutor support for helping on a couple of issues and to my mentor AJ for the guidance.
