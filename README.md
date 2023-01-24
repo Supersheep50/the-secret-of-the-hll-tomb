@@ -193,3 +193,8 @@ The frontend terminal should now be connected and deployed to Heroku.
 - Used Love Sandwiches walkthrough to build out collecting data for the logbook.
 
 - To clear the screen after the user selects Try Again, I referenced this page [here](https://stackoverflow.com/questions/4810537/how-to-clear-the-screen-in-python)
+
+
+## Acknowledgements 
+
+- Big shout out to my partner Stephanie for all her help and wisodm! Thanks to tutor support for helping on a couple of issues and to my mentor AJ for the guidance.

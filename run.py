@@ -537,7 +537,7 @@ def tryAgain():
             os.system('clear')
             mainMenu()
         else:
-            delprint("That is not a valid option")
+            delprint("That is not a valid option.\n")
 
 
 def temple_of_pods():

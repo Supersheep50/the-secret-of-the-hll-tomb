@@ -17,7 +17,10 @@ The program was tested manually by going through all possible error validation m
 |Yes or No questions: enter a space|Yes|![Successful error message](/documents/testing/yes-no-error.3.png)|
 |Crossroad direction questions: enter a number|Yes|![Successful error message](/documents/testing/crossroads-error.png)|
 |Crossroad direction questions: enter a special character|Yes|![Successful error message](/documents/testing/crossroads-error.2.png)|
-|Crossroad direction questions: enter a space|Yes|![Successful error message](/documents/testing/crossroads-error.2.png)|
+|Crossroad direction questions: enter a space|Yes|![Successful error message](/documents/testing/crossroads-error.3.png)|
+|Riddle questions: enter a number outside of 1-3|Yes|![Successful error message](/documents/testing/riddle-question.1.png)|
+|Riddle questions: enter a space|Yes|![Successful error message](/documents/testing/riddle-question.2.png)|
+|Riddle questions: enter a special character|Yes|![Successful error message](/documents/testing/riddle-question.3.png)|
 |Update Google Sheet|Yes|![Updated spreadsheet](documentation/testing/high_score_sheet.png)
 
 
