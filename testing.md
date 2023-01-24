@@ -39,9 +39,8 @@ The program was tested manually by going through all possible error validation m
 |Update Google Sheet|Yes|![Updated spreadsheet](/documents/testing/logbook-check.png)
 
 
-
 ### Validator Testing 
-Code was passed through the [PEP8 online linter]). One issue found that does not affect the working of my code. On mentors advice I am leaving it in and highlighting it here, 
+Code was passed through the [PEP8 online linter]). One issue found that does not affect the working of my code. On mentors advice I am leaving it in and highlighting it here.
 
 ![PEP8 results](/documents/testing/pep8.png)
 

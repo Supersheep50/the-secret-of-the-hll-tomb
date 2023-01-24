@@ -1,13 +1,13 @@
 # imports
-import gspread
-from google.oauth2.service_account import Credentials
-import emoji
 import sys
 import time
 import os
+import gspread
+from google.oauth2.service_account import Credentials
+import emoji
 
 
-def delprint(text="Type a string in", delay_time=.04):
+def delprint(text="Type a string in", delay_time=.05):
     # Code to print slower than default (Credit in Readme)
     for character in text:
         sys.stdout.write(character)
@@ -198,7 +198,7 @@ def owenTomb():
     response = ""
     while response not in answers:
         print("Owen: What work can one never finish?\n")
-        response = input("1)A rubix cube | 2)An autobiography |3)Hoovering \n")
+        response = input("1)A rubix cube |2)An autobiography |3)Hoovering \n")
         if response == "2":
             delprint(f"Owen: Very good {user.name}.\n")
             delprint("Owen: You're wiser than you look.\n")
@@ -264,7 +264,7 @@ def liamTomb():
     while response not in answers:
         delprint("Liam: I DO NOT BELIEVE YOU!! NEEEEEP!\n")
         delprint("Liam: Do you luv Lilt?? \n")
-        response = input("1 )I LOVE COKE | 2) I LOVE MILK |3) I LOVE LILT \n")
+        response = input("1) I LOVE COKE |2) I LOVE MILK |3) I LOVE LILT \n")
         if response == "3":
             delprint("Liam: Hmmm FINE. I believe you. Take this.\n")
             delprint("He hands you an empty can of Lilt.\n")
@@ -336,7 +336,7 @@ def kevinTomb():
         delprint("Kevin: Ahem, yes the riddle.\n")
         delprint("Kevin: It is time for your riddle....again\n")
         delprint("Kevin: What can you serve, but never eat?\n")
-        response = input("1 )A tennis ball | 2) Burgers |3) Soup \n").lower()
+        response = input("1)A tennis ball |2) Burgers |3) Soup \n").lower()
         if response == "1":
             delprint("Kevin: What?! How did you know? Most people say soup.\n")
             delprint("Kevin: You may be strange looking but you are smart.\n")
@@ -616,7 +616,7 @@ def finalScene():
 
     delprint(G+f"Liam: It is time for your final choice {user.name}.\n")
     delprint(R+"Owen: You must choose between a further test of your might.\n")
-    delprint(O+"Kevin: ...or salavation at last.\n")
+    delprint(Or+"Kevin: ...or salvation at last.\n")
     delprint(W+"Jon appears from behind a pillar. Steph runs off behind him\n")
 
     answer = ""
@@ -666,7 +666,7 @@ def mainMenu():
     # Main menu for game.
     response = ""
     while response not in answers:
-        response = input("1)Start New Game | 2)Instructions |3)HLL Podcast \n")
+        response = input("1)Start New Game | 2)Instructions | 3)HLL Podcast \n")
         if response == "1":
             startGame()
         elif response == "2":
