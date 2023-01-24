@@ -33,7 +33,7 @@ SHEET = GSPREAD_CLIENT.open('the-secret-of-the-hll-tomb')
 W = '\033[0m'  # white (normal)
 R = '\033[31m'  # red
 G = '\033[32m'  # green
-O = '\033[33m'  # noqa  # orange 
+Or = '\033[33m'  # noqa  # orange
 B = '\033[34m'  # blue
 P = '\033[35m'  # purple
 C = '\033[96m'  # cyan
@@ -311,14 +311,14 @@ def kevinTomb():
         response = input("(yes / no)\n").lower()
         if response == "no":
             delprint("Mystery man: Oh. Well, I am....\n")
-            delprint(O+"K E V I N!!!!\n")
+            delprint(Or+"K E V I N!!!!\n")
             delprint("Some of the wallpaper starts to peel from the walls.\n")
             delprint("He continues to stand with his arms aloft.\n")
             delprint("Kevin: Hmm if you're not the plumber....\n")
             delprint(f"Kevin: You must be this {user.name} I hear about.\n")
 
         elif response == "yes":
-            delprint(O+"Kevin: Oh thank god. I've been waiting for days! \n")
+            delprint(Or+"Kevin: Oh thank god. I've been waiting for days! \n")
             delprint("Kevin: The guest bedroom toilet is terribly clogged.\n")
             delprint("Kevin: That strange girl Steph stayed here last night\n")
             delprint("Kevin: ...everytime she stays this happens.\n")

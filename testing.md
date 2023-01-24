@@ -36,25 +36,16 @@ The program was tested manually by going through all possible error validation m
 |Final choice error: enter a space |Yes|![Successful error message](/documents/testing/final-choice-error.png)|
 |Final choice error: enter a special character |Yes|![Successful error message](/documents/testing/final-choice-error.2.png)|
 |Final choice error: enter a number |Yes|![Successful error message](/documents/testing/final-choice-error.3.png))|
-|Update Google Sheet|Yes|![Updated spreadsheet](documentation/testing/high_score_sheet.png)
+|Update Google Sheet|Yes|![Updated spreadsheet](/documents/testing/logbook-check.png)
 
 
 
 ### Validator Testing 
-Code was passed through the [PEP8 online linter]). On the initial run, one issue was found, a line break before a binary operator:
+Code was passed through the [PEP8 online linter]). One issue found that does not affect the working of my code. On mentors advice I am leaving it in and highlighting it here, 
 
-![PEP8 results 1]()
-
-I adjusted the line spacing in the function, and no errors were found on a second pass:
-
-![PEP8 results 2]()
-
-After making some changes to the code (spacing/indentation), a third pass also came back with no issues:
-![PEP8 results 3]()
+![PEP8 results](/documents/testing/pep8.png)
 
 
 ### Unfixed Bugs
 
-- Due to limitations in Code Institute's Heroku template, which was used for deployment, this site is *not* fully responsive. The terminal cannot receive input from a mobile keyboard, and does not resize based on window size. Making the application fully responsive was beyond the scope of this project. This shows responsiveness during various stages of gameplay: 
-
-![Am I Responsive screenshot]()
+- I have not discovered any unfixed bugs after many hours of playing the game. Plus manual user testing by my partner and friends.
