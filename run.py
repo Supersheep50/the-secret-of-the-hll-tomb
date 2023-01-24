@@ -666,7 +666,7 @@ def mainMenu():
     # Main menu for game.
     response = ""
     while response not in answers:
-        response = input("1)Start New Game | 2)Instructions | 3)HLL Podcast \n")
+        response = input("1)Start New Game |2)Instructions 3)HLL Podcast \n")
         if response == "1":
             startGame()
         elif response == "2":
